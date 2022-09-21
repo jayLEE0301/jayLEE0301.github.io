@@ -16,14 +16,14 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Sangil Lee"
+title                    : "Seungjae Lee"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Sangil Lee"
-description              : "Robotics vision researcher"
-url                      : "https://sangillee.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Seungjae Lee Lee"
+description              : "Machine learning researcher"
+url                      : "https://jaylee0301.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
-repository               : "lee-sangil/lee-sangil.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "jayLEE0301/jayLEE0301.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -86,26 +86,26 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "UA-109409543-1"
+    tracking_id          : #"UA-109409543-1"
     anonymize_ip         : # true, false (default)
 
 
 # Site Author
 author:
-  name             : "Sangil Lee"
+  name             : "Seungjae Lee"
   avatar           : "/assets/image/thumbnail/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Ph.D. student in Mechanical & Aerospace Engineering in SNU."
+  bio              : "Ph.D. student in Aerospace Engineering in SNU."
   location         : "Seoul, South Korea"
   # email            : "sangillee724@gmail.com"
   links:
     - label: "Curriculum Vitae"
       icon: "fas fa-fw fa-file-pdf"
-      url: "/assets/download/sangillee_cv.pdf"
+      url: "/assets/download/sangillee_cv.pdf" #jay
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:sangillee724@gmail.com"
+      url: "mailto:ysz0301@snu.ac.kr"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -117,22 +117,22 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/lee-sangil"
+      url: "https://github.com/jayLEE0301"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - label: "Google Scholar"
       icon: "fab fa-fw fa-google"
-      url: "https://scholar.google.com/citations?user=Z34jsGIAAAAJ"
+      url: "https://scholar.google.com/citations?user=hpR9h74AAAAJ"
     - label: "Youtube"
       icon: "fab fa-fw fa-youtube"
-      url: "https://www.youtube.com/user/aeternuslsi"
+      #url: "https://www.youtube.com/user/aeternuslsi"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/lee-sangil"
+      #url: "https://www.linkedin.com/in/lee-sangil"
     - label: "Portfolio"
       icon: "fas fa-fw fa-link"
-      url: "https://portfolio.sangillee.com"
+      #url: "https://portfolio.sangillee.com"
 
 # Site Footer
 footer:
@@ -145,7 +145,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/lee-sangil"
+      url: "https://github.com/jayLEE0301"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:

@@ -10,8 +10,8 @@ main:
     url: /categories/
   - title: "Tag"
     url: /tags/
-  - title: "Log"
-    url: /_pages/log/index.html
+#  - title: "Log"
+#    url: /_pages/log/index.html
   # - title: "Dataset"
   #   url: /_pages/icsl-de-dataset/index.html 
   # - title: "Sample Collections"
