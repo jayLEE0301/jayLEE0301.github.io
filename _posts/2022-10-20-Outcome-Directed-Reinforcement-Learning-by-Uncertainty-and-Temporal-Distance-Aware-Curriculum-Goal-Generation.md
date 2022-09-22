@@ -1,5 +1,5 @@
 ---
-title: "Outcome-Directed Reinforcement Learning by Uncertainty & Temporal Distance-Aware Curriculum Goal Generation"
+title: "(submitted) Outcome-Directed Reinforcement Learning by Uncertainty & Temporal Distance-Aware Curriculum Goal Generation"
 categories:
  - Research
  - Conference
@@ -9,7 +9,7 @@ tags:
  - meta learning
 header:
   teaser: /assets/image/thumbnail/ICLR2023.png
-conference: submitted to ICLR
+conference: ICLR
 authors: Daesol Cho*, <u>Seungjae Lee*</u>, and H. Jin Kim (* These authors contributed equally)
 ---
 

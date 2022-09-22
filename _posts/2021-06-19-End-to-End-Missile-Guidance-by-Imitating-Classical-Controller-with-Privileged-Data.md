@@ -1,5 +1,5 @@
 ---
-title: "End-to-End Missile Guidance by Imitating Classical Controller with Privileged Data"
+title: "(under revision) End-to-End Missile Guidance by Imitating Classical Controller with Privileged Data"
 categories:
  - Research
  - Journal
@@ -9,7 +9,7 @@ tags:
  - privileged data
 header:
   teaser: /assets/image/thumbnail/IJCAS2021.jpg
-conference: under revision for IJCAS
+conference: IJCAS
 authors: <u>Seungjae Lee</u>, Jongho Shin, Hyeong-Geun Kim, Daesol Cho, and H. Jin Kim
 ---
 
