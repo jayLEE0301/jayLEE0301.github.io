@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "Seungjae Lee"
   avatar           : "/assets/image/thumbnail/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "&bull Ph.D. student in Department of Aerospace Engineering, SNU <br> &bull Artificial Intelligence Institute of Seoul National University (AIIS)"
+  bio              : "&bull; Ph.D. student in Department of Aerospace Engineering, SNU <br> &bull; Artificial Intelligence Institute of Seoul National University (AIIS)"
   location         : "Seoul, South Korea"
   # email            : "sangillee724@gmail.com"
   links:
