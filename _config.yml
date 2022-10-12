@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "Seungjae Lee"
   avatar           : "/assets/image/thumbnail/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "<ul> <li>Ph.D. student in Department of Aerospace Engineering, SNU</li> <li>Artificial Intelligence Institute of Seoul National University (AIIS)</li></ul>"
+  bio              : "&bull Ph.D. student in Department of Aerospace Engineering, SNU <br> &bull Artificial Intelligence Institute of Seoul National University (AIIS)"
   location         : "Seoul, South Korea"
   # email            : "sangillee724@gmail.com"
   links:
@@ -129,7 +129,7 @@ author:
       url: "https://www.youtube.com/channel/UCHiuxQQdHTcl97jmlqqvMSg"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      #url: "https://www.linkedin.com/in/seungjae-lee-63722a163/"
+      url: "https://www.linkedin.com/in/seungjae-lee-63722a163/"
     - label: "Portfolio"
       icon: "fas fa-fw fa-link"
       #url: "https://portfolio.sangillee.com"
