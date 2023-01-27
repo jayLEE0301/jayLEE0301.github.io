@@ -1,0 +1,32 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-">
+
+**DHRL: A Graph-Based Approach for Long-Horizon and Sparse Hierarchical Reinforcement Learning**
+
+<p><center> NeurIPS 2022, Oral (< 1.8%)</center></p>
+
+<p><center><a href="https://sjlee.cc/">Seungjae Lee</a>, &emsp; <a href="https://jigang.kim">Jigang Kim</a>,  &emsp; <a href="#">Inkyu Jang</a>, &emsp; <a href="https://larr.snu.ac.kr/">H. Jin Kim</a></center></p>
+
+
+<p><center><b><a href="https://arxiv.org/abs/2210.05150">Paper</a>, &emsp; <a href="https://github.com/jayLEE0301/dhrl_official">Code</a></b></center></p>
+
+![DHRL: By decoupling the horizons of both levels of the hierarchical network, DHRL not only solves long and sparse tasks but also significantly outperforms previous state-of-the-art algorithms.](images/dhrl_thumbnail.jpg width="70%")
+
+
+
+*__tldr__*:
+Hierarchical Reinforcement Learning (HRL) has made notable progress in complex control tasks by leveraging temporal abstraction. However, previous HRL algorithms often suffer from serious data inefficiency as environments get large. The extended components, $i.e.$, goal space and length of episodes, impose a burden on either one or both high-level and low-level policies since both levels share the total horizon of the episode. In this paper, we present a method of Decoupling Horizons Using a Graph in Hierarchical Reinforcement Learning (DHRL) which can alleviate this problem by decoupling the horizons of high-level and low-level policies and bridging the gap between the length of both horizons using a graph. DHRL provides a freely stretchable high-level action interval, which facilitates longer temporal abstraction and faster training in complex tasks. Our method outperforms state-of-the-art HRL algorithms in typical HRL environments. Moreover, DHRL achieves long and complex locomotion and manipulation tasks.
+
+
+
+![An overview of DHRL which includes the mid-level non-parametric policy between the high and low levels. The high-level (orange box) policy delivers subgoal $sg \in \mathcal{G}$ to the graph level (green box) and the graph instructs the low-level policy (blue box) to reach the waypoint $wp \in \mathcal{G}$. $c_{h}$ represents how long each high-level action operates for. The low level is given $c_{l,i}$ steps to achieve the goal where $c_{h} \neq c_{l,i}$.](images/dhrl_overview.jpg width="100%")
+
+![DHRL significantly outperforms prior state-of-the-art algorithms (success rate averaged over 4 random seeds and smoothed equally, and only the sparse settings for Reacher3D are tested as in the previous papers). Note that in AntMazeComplex, AntMazeBottleneck, and UR3Obstacle, the curves are not visible as they overlap at zero success rate.](images/dhrl_maingraph.jpg width="100%")
+
+<img width="50%" img src="https://user-images.githubusercontent.com/30570922/197715614-84a6abd0-bb7f-4bbe-9c3a-92ce78d267f0.gif"><img width="50%" img src="https://user-images.githubusercontent.com/30570922/197715628-3d6ee28b-f7dd-4d43-9f94-bb70d433ed00.gif">
+
+
+<img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715659-3c219c68-33b9-41e7-bb39-de192ab8502b.gif"><img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715667-434be510-5778-4905-820b-9947482fa40d.gif"><img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715676-c2c45312-9922-4827-9154-f53a007bdeaf.gif"><img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715692-62854f86-7a54-4716-9f5d-67e934609df7.gif">
+
+--------------------------
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
