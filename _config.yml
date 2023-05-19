@@ -103,7 +103,7 @@ author:
   links:
     - label: "Curriculum Vitae"
       icon: "fas fa-fw fa-file-pdf"
-      #url: "/assets/download/sangillee_cv.pdf" #jay
+      url: "/assets/download/sjlee_cv.pdf" #jay
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
       url: "mailto:ysz0301@snu.ac.kr"
