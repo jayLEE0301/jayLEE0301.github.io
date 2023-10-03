@@ -1,6 +1,491 @@
----
-layout: home
-author_profile: true
-header:
-  overlay_image: /assets/image/header/header4.jpg
----
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Seungjae Lee</title>
+
+    <meta name="author" content="Seungjae Lee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Seungjae Lee
+                </p>
+                <p>
+                  I am a M.S. student at <a href="https://en.snu.ac.kr">Seoul National University</a> in Seoul, advised by Prof. H. Jin Kim.
+
+                  My research interest is understanding the interaction between agents and environments, and devising data-efficient decision-making (or robot learning) algorithms, especially in the field of reinforcement learning (RL).
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:ysz0301@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a href="data/sjlee_CV_ver3.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=hpR9h74AAAAJ">Google Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://twitter.com/JayLEE_0301">Twitter</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/jayLEE0301">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:40%;max-width:40%">
+                <a href="images/sjlee.jpg"><img style="width:60%;max-width:60%" alt="profile photo" src="images/sjlee.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>News</h2>
+                <p>
+                  <ul>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">09/2023: Two papers on curriculum learning for robot agents were accepted to <a href="https://nips.cc/Conferences/2023">NeurIPS 2023.</a>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">07/2023: Presented a paper on 3D representation learning for robot agents at <a href="https://icml.cc/Conferences/2022">ICML 2023.</a>
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">05/2023: Presented a paper on exploration for RL at <a href="https://iclr.cc/Conferences/2023">ICLR 2023</a> (Spotlight).
+                    <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">12/2022: Presented a paper on hierarchical RL at <a href="https://nips.cc/Conferences/2022">NeurIPS 2022</a> (Oral presentation).
+                  </ul>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <h2>Research</h2>
+              <p>
+                Representative papers are <span class="highlight">highlighted</span>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  
+      <tr onmouseout="cqm_stop()" onmouseover="cqm_start()"  bgcolor="#ffffd0">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='cqm_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/cqm_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video></div>
+            <img src='images/cqm_image.png' width="160">
+          </div>
+          <script type="text/javascript">
+            function cqm_start() {
+              document.getElementById('cqm_image').style.opacity = "1";
+            }
+
+            function cqm_stop() {
+              document.getElementById('cqm_image').style.opacity = "0";
+            }
+            cqm_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://drive.google.com/file/d/1U5AndLsNtCjyes9beJcywcJKCcvVtVU2/view">
+            <span class="papertitle">CQM: Curriculum Reinforcement Learning with a Quantized World Model</span>
+          </a>
+          <br>
+          <strong>Seungjae Lee</strong>, Daesol Cho, Jonghae Park, H Jin Kim
+          <br>
+          <em>NeurIPS</em>, 2023
+          <br>
+          <a href="https://drive.google.com/file/d/1U5AndLsNtCjyes9beJcywcJKCcvVtVU2/view">PDF</a>
+          <p></p>
+          <p>
+          Previous approaches often face challenges when they generate curriculum goals in a high-dimensional space. To alleviate it, we propose a novel curriculum method for agents that automatically defines the semantic goal space, and suggests curriculum goals over it.
+          </p>
+        </td>
+      </tr>
+
+
+      <tr onmouseout="d2c_stop()" onmouseover="d2c_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='d2c_image'>
+              <img src='images/d2c_image2.png' width="160" height="160"></div>
+            <img src='images/d2c_image.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function d2c_start() {
+              document.getElementById('d2c_image').style.opacity = "1";
+            }
+
+            function d2c_stop() {
+              document.getElementById('d2c_image').style.opacity = "0";
+            }
+            d2c_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://drive.google.com/file/d/1d-S-iCT9mfR3ww2BZfZSboCkE6GXQVdc/view">
+            <span class="papertitle">Diversify Conquer: Outcome-directed Curriculum RL via Out-of-Distribution Disagreement</span>
+          </a>
+          <br>
+          Daesol Cho, <strong>Seungjae Lee</strong>, H Jin Kim
+          <br>
+          <em>NeurIPS</em>, 2023
+          <br>
+          <a href="https://drive.google.com/file/d/1d-S-iCT9mfR3ww2BZfZSboCkE6GXQVdc/view">PDF</a>
+          <p></p>
+          <p>
+            Unlike previous curriculum learning methods, D2C requires only a few examples of desired outcomes and works in any environment, regardless of its geometry or the distribution of the desired outcome examples.
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="snerl_stop()" onmouseover="snerl_start()" bgcolor="#ffffd0">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='snerl_image'><video  width=100% height=100% muted autoplay loop>
+              <source src="images/snerl_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+            <img src='images/snerl_image.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function snerl_start() {
+              document.getElementById('snerl_image').style.opacity = "1";
+            }
+
+            function snerl_stop() {
+              document.getElementById('snerl_image').style.opacity = "0";
+            }
+            snerl_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2301.11520">
+            <span class="papertitle">SNeRL: Semantic-aware Neural Radiance Fields for Reinforcement Learning</span>
+          </a>
+          <br>
+          Dongseok Shim*, <strong>Seungjae Lee*</strong>, H Jin Kim Kim (*equal contribution)
+          <br>
+          <em>ICML</em>, 2023
+          <br>
+          <a href="https://arxiv.org/abs/2301.11520">arXiv</a> /
+          <a href="https://github.com/jayLEE0301/snerl_official">github</a>
+          <p></p>
+          <p>
+            We present Semantic-aware Neural Radiance Fields for Reinforcement Learning (SNeRL), which jointly optimizes semantic-aware neural radiance fields (NeRF) with a convolutional encoder to learn 3D-aware neural implicit representation from multi-view images.
+          </p>
+        </td>
+      </tr>
+
+
+      <tr onmouseout="outpace_stop()" onmouseover="outpace_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='outpace_image'>
+              <img src='images/outpace_image.png' width="160" height="160"></div>
+            <img src='images/outpace_image2.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function outpace_start() {
+              document.getElementById('outpace_image').style.opacity = "1";
+            }
+
+            function outpace_stop() {
+              document.getElementById('outpace_image').style.opacity = "0";
+            }
+            outpace_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2301.11741">
+            <span class="papertitle">Outcome-directed Reinforcement Learning by Uncertainty & Temporal Distance-Aware Curriculum
+              Goal Generation</span>
+          </a>
+          <br>
+          Daesol Cho*, <strong>Seungjae Lee*</strong>, H Jin Kim Kim (*equal contribution)
+          <br>
+          <em>ICLR</em>, 2023 &nbsp <font color="red"><strong>(Spotlight)</strong></font>
+          <br>
+          <a href="https://arxiv.org/abs/2301.11741">arXiv</a> /
+          <a href="https://github.com/jayLEE0301/outpace_official">github</a>
+          <p></p>
+          <p>
+            We propose an uncertainty & temporal distance-aware curriculum goal generation method for the outcome-directed RL via solving a bipartite matching problem. It can provide precisely calibrated guidance of the curriculum to the desired outcome states.
+          </p>
+        </td>
+      </tr>
+      
+      <tr onmouseout="ijcas_stop()" onmouseover="ijcas_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='ijcas_image'>
+              <img src='images/ijcas_image2.png' width="160" height="160"></div>
+            <img src='images/ijcas_image.png' width="160" height="100">
+          </div>
+          <script type="text/javascript">
+            function ijcas_start() {
+              document.getElementById('ijcas_image').style.opacity = "1";
+            }
+
+            function ijcas_stop() {
+              document.getElementById('ijcas_image').style.opacity = "0";
+            }
+            ijcas_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2301.11741">
+            <span class="papertitle">Deep End-to-End Imitation Learning for Missile Guidance with Infrared
+              Images
+              Goal Generation</span>
+          </a>
+          <br>
+          <strong>Seungjae Lee</strong>, Jongho Shin, Hyeong-Geun Kim, Daesol Cho, H. Jin Kim
+          <br>
+          <em>IJCAS</em>, 2023
+          <br>
+          <p></p>
+          <p>
+            We propose an end-to-end missile guidance algorithm from raw infrared image pixels by imitating a conventional guidance law which leverages privileged data. 
+          </p>
+        </td>
+      </tr>
+
+
+      <tr onmouseout="dhrl_stop()" onmouseover="dhrl_start()" bgcolor="#ffffd0">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='dhrl_image'><video  width=100% height=100% muted autoplay loop>
+              <source src="images/dhrl_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+            <img src='images/dhrl_image.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function dhrl_start() {
+              document.getElementById('dhrl_image').style.opacity = "1";
+            }
+
+            function dhrl_stop() {
+              document.getElementById('dhrl_image').style.opacity = "0";
+            }
+            dhrl_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2210.05150">
+            <span class="papertitle">DHRL: A Graph-Based Approach for Long-Horizon and Sparse Hierarchical Reinforcement Learning
+              Goal Generation</span>
+          </a>
+          <br>
+          <strong>Seungjae Lee</strong>, Jigang Kim, Inkyu Jang, H. Jin Kim
+          <br>
+          <em>NeurIPS</em>, 2022 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+          <br>
+          <a href="https://arxiv.org/abs/2210.05150">arXiv</a> /
+          <a href="https://github.com/jayLEE0301/dhrl_official">github</a>
+          <p></p>
+          <p>
+            DHRL provides a freely stretchable high-level action interval, which facilitates longer temporal abstraction and faster training in complex tasks.
+          </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="iros_stop()" onmouseover="iros_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='iros_image'>
+              <img src='images/iros_image2.png' width="160" height="160"></div>
+            <img src='images/iros_image.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function iros_start() {
+              document.getElementById('iros_image').style.opacity = "1";
+            }
+
+            function iros_stop() {
+              document.getElementById('iros_image').style.opacity = "0";
+            }
+            iros_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://arxiv.org/abs/2107.06484">
+            <span class="papertitle">Robust and Recursively Feasible Real-Time Trajectory Planning in Unknown Environments
+              Goal Generation</span>
+          </a>
+          <br>
+          Inkyu Jang, Dongjae Lee, <strong>Seungjae Lee</strong>, H Jin Kim
+          <br>
+          <em>IROS</em>, 2021
+          <br>
+          <a href="https://arxiv.org/abs/2107.06484">arXiv</a>
+          <p></p>
+          <p>
+            We propose a real-time robust planner that recursively guarantees persistent feasibility without any need of braking. 
+          </p>
+        </td>
+      </tr>
+          </tbody></table>
+
+          
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Projects</h2>
+              </td>
+            </tr>
+
+        
+      <tr onmouseout="hdx_stop()" onmouseover="hdx_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='hdx_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/hdx_image.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video></div>
+            <img src='images/hdx_image.png' width="160">
+          </div>
+          <script type="text/javascript">
+            function hdx_start() {
+              document.getElementById('hdx_image').style.opacity = "1";
+            }
+
+            function hdx_stop() {
+              document.getElementById('hdx_image').style.opacity = "0";
+            }
+            hdx_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <span class="papertitle">Training Excavator Virtual Driver based on Inverse RL</span>
+          <br>
+          
+          <p></p>
+          <p>
+            Co-work with HD Hyundai Heavy Industries Co., Ltd.
+            <br>
+            <em>Apr. 2023 - Present</em>
+          </p>
+        </td>
+      </tr>
+
+
+      <tr onmouseout="ic01_stop()" onmouseover="ic01_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='ic01_image'>
+              <img src='images/ic01_image.png' width="160" height="160"></div>
+            <img src='images/ic01_image.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function ic01_start() {
+              document.getElementById('ic01_image').style.opacity = "1";
+            }
+
+            function ic01_stop() {
+              document.getElementById('ic01_image').style.opacity = "0";
+            }
+            ic01_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <span class="papertitle">End-to-End Machine Learning Based Guidance Research</span>
+          <br>
+          Co-work with a Korean national research institute
+          <br>
+          <em>Apr. 2023 - Present</em>
+          </p>
+        </td>
+      </tr>
+          </tbody></table>
+
+
+
+
+
+
+
+
+          
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Awards and Achievements</h2>
+              </td>
+              
+            </tr>
+            
+          </tbody></table>
+
+          <ul>
+            <li>[Awards] Graduated Summa Cum Laude, Seoul National University (1st prize in Department of Aerospace Engineering)</li>
+            <li>[Scholarship] Hyundai Motor Chung Mong-Koo Foundation</li>
+            <li>[Awards] NeurIPS Scholar Award</li>
+            <li>[Awards] Global Excellence Scholarship 2022, Hyundai Motor Chung Mong-Koo Foundation</li>
+            <li>[Awards] Best poster competition, SNU Artificial Intelligence Institute Spring Retreat</li>
+            <li>[Awards] Global Excellence Scholarship 2023, Hyundai Motor Chung Mong-Koo Foundation</li>
+          </ul>
+
+
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Academic Services</h2>
+              </td>
+              
+            </tr>
+            
+          </tbody></table>
+
+          <ul>
+            <li>Conference reviewer for ICML'22</li>
+            <li>Conference reviewer for IROS'23</li>
+            <li>Conference reviewer for NeurIPS'23</li>
+          </ul>
+
+
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Professional Experience</h2>
+              </td>
+              
+            </tr>
+            
+          </tbody></table>
+
+          <ul>
+            <li>[Internship] Samsung Electronics, Deep Learning Algorithm Team / Device Solutions (DS), 2020.7 - 2020.9</li>
+            <li>[Research Group] <a href="https://deepest.ai/">Deepest</a>. (SNU Deep Learning Society), 2020.9 - 2022.2</li>
+            <li>[Collaborative Research] Co-work with Generalizable Robotics and AI Lab (Prof. Lerrel Pinto) at New York University, 2023.7 - present</li>
+          </ul>
+
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  Source code credit to <a href="https://jonbarron.info/" target="_blank">Dr. Jon Barron</a></p>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGGPX4TZJ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-TGGPX4TZJ3');
+</script>
