@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VQ-BeT: Behavior Generation with Latent Actions</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico?">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VQ-BeT: Behavior Generation with Latent Actions</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://sjlee.cc/">Seungjae Lee</a><sup>1</sup>&nbsp;&nbsp;
+              <a target="_blank" href="https://sjlee.cc/vq-bet">Yibin Wang</a><sup>2</sup>&nbsp;&nbsp;
+              <a target="_blank" href="https://sjlee.cc/vq-bet">Haritheja Etukuru</a><sup>2</sup>&nbsp;&nbsp;
+              <a target="_blank" href="https://sjlee.cc/vq-bet">H. Jin Kim</a><sup>1</sup>&nbsp;&nbsp;
+              <a target="_blank" href="https://mahis.life/">Nur Muhammad Mahi Shafiullah</a><sup>2,*</sup>&nbsp;&nbsp;
+              <a target="_blank" href="https://www.lerrelpinto.com/">Lerrel Pinto</a><sup>2,*</sup>&nbsp;&nbsp;
+              <br />Seoul National University<sup>1</sup>, New York University<sup>2</sup>
+              <br />* equal advising
+            </span>
+          </div>
+        <div class="column has-text-centered">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a target="_blank" href="./resources/VQ_BeT_icml2024_website.pdf"
+                class="external-link button is-normal is-rounded is-dark">
+              <span>Paper</span>
+            </a>
+          </span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+</section>
+
+<section class="section">
+  <div class="container">
+  
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Generative modeling of complex behaviors from labeled datasets has been a longstanding problem in decision-making. Unlike language or image generation, decision-making requires modeling actions – continuous-valued vectors that are multimodal in their distribution, potentially drawn from uncurated sources, where generation errors can compound in sequential prediction. A recent class of models called Behavior Transformers (BeT) addresses this by discretizing actions using k-means clustering to capture different modes. However, k-means struggles to scale for high-dimensional action spaces or long sequences and lacks gradient information, and thus BeT suffers in modeling long-range actions. In this work, we present Vector-Quantized Behavior Transformer (VQ-BeT), a versatile model for behavior generation that handles multimodal action prediction, conditional generation, and partial observations. VQ-BeT augments BeT by tokenizing continuous actions with a hierarchical vector quantization module. Across seven environments including simulated manipulation, autonomous driving, and robotics, VQ-BeT improves on state-of-the-art models such as BeT and Diffusion Policies. Importantly, we demonstrate VQ-BeT’s improved ability to capture behavior modes while accelerating inference speed 5× over Diffusion Policies. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+  <section class="section" style="width: 95%; margin: 0 auto;">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <h3 class="title is-3" style="text-align: center; padding-bottom: 6px;"><bold>VQ-BeT on Real-World Kitchen Tasks</bold></h3>
+                <div class="column is-full-width">
+                  <div class="content has-text-centered">
+                      <p style="text-align: center; font-size: 16px"> </p>
+                  </div>
+              </div>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-half">
+                        <p>
+                          Toaster Closing (X4)
+                        </p>
+                        <video class="center" playsinline autoplay loop muted src="./resources/movies/toaster_closing.mov" width="100%"
+                            style="border-radius:10px;"></video>
+                    </div>
+                    <div class="column is-half">
+                        <p>
+                          Pick and Place Can Toaster Closing (X4)
+                        </p>
+                        <video class="center" playsinline autoplay loop muted src="./resources/movies/pick_place_can_toaster_closing.mov" width="100%"
+                            style="border-radius:10px;"></video>
+                    </div>
+                </div>
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-half">
+                      <p>
+                        Toaster and Fridge Closing (X4)
+                      </p>
+                      <video class="center" playsinline autoplay loop muted src="./resources/movies/toaster_and_fridge_closing.mov" width="100%"
+                          style="border-radius:10px;"></video>
+                  </div>
+                  <div class="column is-half">
+                      <p>
+                        Fridge Closing (X4)
+                      </p>
+                      <video class="center" playsinline autoplay loop muted src="./resources/movies/fridge_closing.mov" width="100%"
+                          style="border-radius:10px;"></video>
+                  </div>
+              </div>
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-half">
+                    <p>
+                      Toaster Opening (X4)
+                    </p>
+                    <video class="center" playsinline autoplay loop muted src="./resources/movies/toaster_opening.mov" width="100%"
+                        style="border-radius:10px;"></video>
+                </div>
+                <div class="column is-half">
+                    <p>
+                      Pick and Place Fridge Closing (X4)
+                    </p>
+                    <video class="center" playsinline autoplay loop muted src="./resources/movies/pick_place_fridge_closing.mov" width="100%"
+                        style="border-radius:10px;"></video>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-half">
+                  <p>
+                    Pick and Place Can Fridge (X4)
+                  </p>
+                  <video class="center" playsinline autoplay loop muted src="./resources/movies/pick_place_can_fridge.mov" width="100%"
+                      style="border-radius:10px;"></video>
+              </div>
+              <div class="column is-half">
+                  <p>
+                    Pick and Place Can Toaster (X4)
+                  </p>
+                  <video class="center" playsinline autoplay loop muted src="./resources/movies/pick_place_can_toaster.mov" width="100%"
+                      style="border-radius:10px;"></video>
+              </div>
+          </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h3 class="title is-3"><bold>VQ-BeT on Long-Horizon Real-World Kitchen Tasks</bold></h3>
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">[Can to Fridge → Fridge Closing → Toaster Opening] (X5)</h5>
+            <!-- <p>
+              Can to Fridge → Fridge Closing → Toaster Opening
+            </p> -->
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./resources/long_horizon1.mov" width="100%"
+                style="border-radius:10px;"></video>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/long_hor1.png" style="width: 100%;" alt="vq-bet">
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">[Can to Toaster → Toaster Closing → Fridge Closing] (X5)</h5>
+            <!-- <p>
+              Can to Toaster → Toaster Closing → Fridge Closing
+            </p> -->
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./resources/long_horizon2.MOV" width="100%"
+                style="border-radius:10px;"></video>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/long_hor2.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="width: 95%; margin: 0 auto;">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-three-quarters">
+                <h3 class="title is-3" style="text-align: center; padding-bottom: 6px;"><bold>VQ-BeT on Simulated Tasks</bold></h3>
+                <div class="column is-full-width">
+                  <div class="content has-text-centered">
+                      <p style="text-align: center; font-size: 16px"> </p>
+                  </div>
+              </div>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-half">
+                        <p>
+                          Franka Kitchen
+                        </p>
+                        <video class="center" playsinline autoplay loop muted src="./resources/kitchen.mp4" width="100%"
+                            style="border-radius:10px;"></video>
+                    </div>
+                    <div class="column is-half">
+                        <p>
+                          UR3 Multimodal (X2)
+                        </p>
+                        <video class="center" playsinline autoplay loop muted src="./resources/ur3_crop.mp4" width="100%"
+                            style="border-radius:10px;"></video>
+                    </div>
+                </div>
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-half">
+                      <p>
+                        Ant Multimodal
+                      </p>
+                      <video class="center" playsinline autoplay loop muted src="./resources/ant.mp4" width="100%"
+                          style="border-radius:10px;"></video>
+                  </div>
+                  <div class="column is-half">
+                      <p>
+                        PushT
+                      </p>
+                      <video class="center" playsinline autoplay loop muted src="./resources/pusht.mp4" width="100%"
+                          style="border-radius:10px;"></video>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+  
+  <section class="section">
+    <div class="container">
+  <!-- Method. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-2">Method</h2>
+      <div class="columns is-centered has-text-centered">
+        <img src="./resources/figure_2_page-0001.jpg" style="width: 100%;" alt="vq-bet">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Overview of VQ-BeT, broken down into the residual VQ encoder-decoder training phase and the VQ-BeT training phase. The same architecture works for both conditional and unconditional cases with an optional goal input. In the bottom right, we show a detailed view of the hierarchical code prediction method.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+  <!-- Method. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-2">Experiment Results</h2>
+      <div class="columns is-centered has-text-centered">
+        <img src="./resources/rank_vs_infertime.png" style="width: 100%;" alt="vq-bet">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          We show two plots comparing VQ-BeT and relevant baselines on unconditional and goal-conditional behavior generation. The comparison axes are (x-axis) relative success represented by average rank on a suite of seven simulated tasks, and (y-axis) inference time
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="./resources/unconditional_with_numbers_page-0001.jpg" style="width: 100%;" alt="vq-bet">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Evaluation of unconditional tasks in simulation environments of VQ-BeT and related baselines. VQ-BeT achieves the best performance in most simulation environments and comparable performance with the best baseline on BlockPush and Image Kitchen.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="./resources/conditional_with_numbers_page-0001.jpg" style="width: 100%;" alt="vq-bet">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Evaluation of conditional tasks in simulation environments of VQ-BeT and related baselines. VQ-BeT achieves the best performance in most simulation environments and comparable performance with the best baseline on BlockPush.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Source code credit to <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
