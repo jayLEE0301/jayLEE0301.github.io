@@ -75,8 +75,7 @@
   }
   
   .nav-button:hover .button-text {
-    color: black; /* Changes text color on hover */
-    background-color: rgba(255, 255, 255, 1); 
+    color: white; /* Changes text color on hover */
   }
   .nav-button:hover {
     filter: grayscale(0%);
@@ -87,7 +86,7 @@
     }
 
     #realworld-button:hover {
-      background-image: url('./resources/button_realworld_gray.png');
+      background-image: url('./resources/button_realworld.png');
     }
     
     #simulated-button {
@@ -95,17 +94,8 @@
     }
     
     #simulated-button:hover {
-      background-image: url('./resources/button_simulated_gray.png');
+      background-image: url('./resources/button_simulated.png');
     }
-
-    #driving-button {
-      background-image: url('./resources/driving_button.png');
-    }
-    
-    #code-button {
-      background-image: url('./resources/codebase_button.png');
-    }
-    
     </style>
 </head>
 <body>
@@ -183,26 +173,29 @@
       </div>
     </div>
   </div>
-
-  
-
 </section>
 
-<section class="section">
-  <div class="container">
-  
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h2 class="title is-2">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Generative modeling of complex behaviors from labeled datasets has been a longstanding problem in decision-making. Unlike language or image generation, decision-making requires modeling actions – continuous-valued vectors that are multimodal in their distribution, potentially drawn from uncurated sources, where generation errors can compound in sequential prediction. A recent class of models called Behavior Transformers (BeT) addresses this by discretizing actions using k-means clustering to capture different modes. However, k-means struggles to scale for high-dimensional action spaces or long sequences and lacks gradient information, and thus BeT suffers in modeling long-range actions. In this work, we present Vector-Quantized Behavior Transformer (VQ-BeT), a versatile model for behavior generation that handles multimodal action prediction, conditional generation, and partial observations. VQ-BeT augments BeT by tokenizing continuous actions with a hierarchical vector quantization module. Across seven environments including simulated manipulation, autonomous driving, and robotics, VQ-BeT improves on state-of-the-art models such as BeT and Diffusion Policies. Importantly, we demonstrate VQ-BeT’s improved ability to capture behavior modes while accelerating inference speed 5× over Diffusion Policies. 
-          </p>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h3 class="title is-3"><bold>VQ-BeT for Autonomous Driving</bold></h3>
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Forward</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/forward/0278.png" style="width: 100%;" alt="vq-bet">
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
 
   <section class="section">
@@ -210,47 +203,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-two-thirds">
           <div class="columns is-centered has-text-centered">
-            <video class="center" playsinline autoplay loop muted src="./resources/vqbet-thumbnail.mp4" width="100%"
-                style="border-radius:10px;"></video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
-    <div class="container"> <!-- This container aligns the button section with other content -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-half">
-          <div class="navigation-buttons">
-            <a href="./realworld_index.html" class="nav-button" id="realworld-button">
-              <span class="button-text">Real-World Videos</span>
-            </a>
-          </div>
-        </div>
-        <div class="column is-half">
-          <div class="navigation-buttons">
-            <a href="./simulated_index.html" class="nav-button" id="simulated-button">
-              <span class="button-text">Simulated-World Videos</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-half">
-          <div class="navigation-buttons">
-            <a href="./driving_index.html" class="nav-button" id="driving-button">
-              <span class="button-text"> Autonomous Driving</span>
-            </a>
-          </div>
-        </div>
-        <div class="column is-half">
-          <div class="navigation-buttons">
-            <a href="https://github.com/jayLEE0301/vq_bet_official" class="nav-button" id="code-button">
-              <span class="button-text">Code</span>
-            </a>
+            <img src="./resources/nuscenes-results/forward/0490.png" style="width: 100%;" alt="vq-bet">
           </div>
         </div>
       </div>
@@ -259,58 +212,231 @@
 
   <section class="section">
     <div class="container">
-  <!-- Method. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-      <h2 class="title is-2">Method</h2>
       <div class="columns is-centered has-text-centered">
-        <img src="./resources/figure_2_page-0001.jpg" style="width: 100%;" alt="vq-bet">
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          Overview of VQ-BeT, broken down into the residual VQ encoder-decoder training phase and the VQ-BeT training phase. The same architecture works for both conditional and unconditional cases with an optional goal input. In the bottom right, we show a detailed view of the hierarchical code prediction method.
-        </p>
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/forward/0774.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/forward/1164.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/stop/2384.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Turn Left</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/left/0376.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/left/0530.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 
   <section class="section">
     <div class="container">
-  <!-- Method. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-      <h2 class="title is-2">Experiment Results</h2>
       <div class="columns is-centered has-text-centered">
-        <img src="./resources/rank_vs_infertime.png" style="width: 100%;" alt="vq-bet">
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          We show two plots comparing VQ-BeT and relevant baselines on unconditional and goal-conditional behavior generation. The comparison axes are (x-axis) relative success represented by average rank on a suite of seven simulated tasks, and (y-axis) inference time
-        </p>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <img src="./resources/unconditional_with_numbers_page-0001.jpg" style="width: 100%;" alt="vq-bet">
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          Evaluation of unconditional tasks in simulation environments of VQ-BeT and related baselines. VQ-BeT achieves the best performance in most simulation environments and comparable performance with the best baseline on BlockPush and Image Kitchen.
-        </p>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <img src="./resources/conditional_with_numbers_page-0001.jpg" style="width: 100%;" alt="vq-bet">
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          Evaluation of conditional tasks in simulation environments of VQ-BeT and related baselines. VQ-BeT achieves the best performance in most simulation environments and comparable performance with the best baseline on BlockPush.
-        </p>
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/left/0606.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Turn Right</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/right/0942.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/right/1802.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/right/2838.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Stop</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/stop/1972.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/stop/2110.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/stop/2304.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Failure Cases</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/failure/0180.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/failure/0378.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <img src="./resources/nuscenes-results/failure/0442.png" style="width: 100%;" alt="vq-bet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
 <footer class="footer">
   <div class="container">
