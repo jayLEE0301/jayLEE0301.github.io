@@ -33,6 +33,70 @@
   <script src="./static/js/index.js"></script>
 
   <link rel="icon" href="./favicon.ico?">
+  <style>
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+      max-width: 900px; /* Example: match Bulma's container max-width at certain breakpoints */
+      margin: 0 auto; /* Center align the div */
+    }
+    
+    .nav-button {
+    flex: 1;
+    display: inline-flex;
+    align-items: flex-end; /* Align items to the end (bottom) of the container */
+    justify-content: center;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 10px;
+    height: 150px;
+    border-radius: 25px;
+    filter: grayscale(100%);
+    text-decoration: none; /* Removes underline from links */
+    position: relative; /* Ensures the button is positioned relatively for absolute positioning of text */
+  }
+  
+  .button-text {
+    background-color: rgba(128, 128, 128, 0.5); /* Semi-transparent gray */
+    color: white; /* Text color */
+    padding: 5px 10px; /* Adjust padding for readability */
+    border-radius: 5px; /* Optional: adds rounded corners to the text background */
+    position: absolute; /* Position the text absolutely within the button */
+    bottom: 10px; /* Distance from the bottom of the button */
+  }
+  
+  .nav-button:hover .button-text {
+    color: white; /* Changes text color on hover */
+  }
+  .nav-button:hover {
+    filter: grayscale(0%);
+  }
+    
+    #methods-button {
+      background-image: url('./resources/button_realworld_gray.png');
+    }
+
+    #methods-button:hover {
+      background-image: url('./resources/button_realworld.png');
+    }
+    
+    #experiment-button {
+      background-image: url('./resources/button_simulated_gray.png');
+    }
+    
+    #experiment-button:hover {
+      background-image: url('./resources/button_simulated.png');
+    }
+    </style>
 </head>
 <body>
 
@@ -89,10 +153,21 @@
       </div>
     </div>
   </div>
+
+  <section class="section">
+    <div class="container"> <!-- This container aligns the button section with other content -->
+      <div class="navigation-buttons">
+        <a href="#Real-World" class="nav-button" id="realworld-button">
+          <span class="button-text">Real-World</span>
+        </a>
+        <a href="#Simulated" class="nav-button" id="simulated-button">
+          <span class="button-text">Simulated</span>
+        </a>
+      </div>
+    </div>
   </section>
 
-
-  <section class="section" style="width: 100%; margin: 0 auto;">
+  <section class="section" id="Real-World" style="width: 100%; margin: 0 auto;">
       <div class="container">
           <div class="columns is-centered">
               <div class="column is-three-quarters">
@@ -208,7 +283,7 @@
     </div>
   </section>
 
-  <section class="section" style="width: 100%; margin: 0 auto;">
+  <section class="section" id="Simulated" style="width: 100%; margin: 0 auto;">
     <div class="container">
         <div class="columns is-centered">
             <div class="column is-three-quarters">
