@@ -58,7 +58,7 @@
     font-size: 24px;
     font-weight: bold;
     margin: 0 10px;
-    height: 150px;
+    height: 280px;
     border-radius: 25px;
     filter: grayscale(100%);
     text-decoration: none; /* Removes underline from links */
@@ -75,7 +75,8 @@
   }
   
   .nav-button:hover .button-text {
-    color: white; /* Changes text color on hover */
+    color: black; /* Changes text color on hover */
+    background-color: rgba(255, 255, 255, 1); 
   }
   .nav-button:hover {
     filter: grayscale(0%);
@@ -154,323 +155,36 @@
     </div>
   </div>
 
-  <section class="section">
-    <div class="container"> <!-- This container aligns the button section with other content -->
-      <div class="navigation-buttons">
-        <a href="#Real-World" class="nav-button" id="realworld-button">
-          <span class="button-text">Real-World</span>
-        </a>
-        <a href="#Simulated" class="nav-button" id="simulated-button">
-          <span class="button-text">Simulated</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="Real-World" style="width: 100%; margin: 0 auto;">
-      <div class="container">
-          <div class="columns is-centered">
-              <div class="column is-three-quarters">
-                  <h3 class="title is-3" style="text-align: center; padding-bottom: 6px;"><bold>VQ-BeT on Real-World Kitchen Tasks</bold></h3>
-                  <div class="column is-full-width">
-                    <div class="content has-text-centered">
-                        <p style="text-align: center; font-size: 16px"> </p>
-                    </div>
-                  </div>
-                  <div class="columns is-centered has-text-centered">
-                      <div class="column is-half">
-                          <p>
-                            Toaster Closing (X5)
-                          </p>
-                          <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/toaster_closing.mov" width="100%"
-                              style="border-radius:10px;"></video>
-                      </div>
-                      <div class="column is-half">
-                        <p>
-                          Fridge Closing (X5)
-                        </p>
-                        <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/fridge_closing.mov" width="100%"
-                            style="border-radius:10px;"></video>
-                      </div>
-                  </div>
-                  <div class="columns is-centered has-text-centered">
-                      <div class="column is-half">
-                          <p>
-                            Toaster and Fridge Closing (X5)
-                          </p>
-                          <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/toaster_and_fridge_closing.mov" width="100%"
-                              style="border-radius:10px;"></video>
-                      </div>
-                      <div class="column is-half">
-                        <p>
-                          Pick and Place Can Toaster Closing (X5)
-                        </p>
-                        <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/pick_place_can_toaster_closing.mov" width="100%"
-                            style="border-radius:10px;"></video>
-                      </div>
-                  </div>
-                  <div class="columns is-centered has-text-centered">
-                    <div class="column is-half">
-                        <p>
-                          Toaster Opening (X5)
-                        </p>
-                        <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/toaster_opening.mov" width="100%"
-                            style="border-radius:10px;"></video>
-                    </div>
-                    <div class="column is-half">
-                        <p>
-                          Pick and Place Fridge Closing (X5)
-                        </p>
-                        <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/pick_place_fridge_closing.mov" width="100%"
-                            style="border-radius:10px;"></video>
-                    </div>
-                  </div>
-                  <div class="columns is-centered has-text-centered">
-                    <div class="column is-half">
-                        <p>
-                          Pick and Place Can Fridge (X5)
-                        </p>
-                        <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/pick_place_can_fridge.mov" width="100%"
-                            style="border-radius:10px;"></video>
-                    </div>
-                    <div class="column is-half">
-                        <p>
-                          Pick and Place Can Toaster (X5)
-                        </p>
-                        <video class="center" playsinline autoplay loop muted src="./resources/movies/playkitchen/pick_place_can_toaster.mov" width="100%"
-                            style="border-radius:10px;"></video>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
 
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-two-thirds">
-          <h3 class="title is-3"><bold>VQ-BeT on Long-Horizon Real-World Kitchen Tasks</bold></h3>
           <div class="columns is-centered has-text-centered">
-            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">[Can to Fridge → Fridge Closing → Toaster Opening] (X5)</h5>
-            <!-- <p>
-              Can to Fridge → Fridge Closing → Toaster Opening
-            </p> -->
-          </div>
-          <div class="columns is-centered has-text-centered">
-            <video class="center" playsinline autoplay loop muted src="./resources/long_horizon1.mov" width="100%"
+            <video class="center" playsinline autoplay loop muted src="./resources/vqbet-thumbnail.mp4" width="100%"
                 style="border-radius:10px;"></video>
           </div>
-          <div class="columns is-centered has-text-centered">
-            <img src="./resources/long_hor1.png" style="width: 100%;" alt="vq-bet">
-          </div>
-
-          <div class="columns is-centered has-text-centered">
-            <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">[Can to Toaster → Toaster Closing → Fridge Closing] (X5)</h5>
-            <!-- <p>
-              Can to Toaster → Toaster Closing → Fridge Closing
-            </p> -->
-          </div>
-          <div class="columns is-centered has-text-centered">
-            <video class="center" playsinline autoplay loop muted src="./resources/long_horizon2.MOV" width="100%"
-                style="border-radius:10px;"></video>
-          </div>
-          <div class="columns is-centered has-text-centered">
-            <img src="./resources/long_hor2.png" style="width: 100%;" alt="vq-bet">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="Simulated" style="width: 100%; margin: 0 auto;">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-three-quarters">
-                <h3 class="title is-3" style="text-align: center; padding-bottom: 6px;"><bold>VQ-BeT on Simulated Tasks</bold></h3>
-                <div class="column is-full-width">
-                  <div class="content has-text-centered">
-                      <p style="text-align: center; font-size: 16px"> </p>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
-
-
-  <section class="hero is-light is-small">
-    <div class="columns is-centered has-text-centered">
-      <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Franka Kitchen</h5>
-      <!-- <p>
-        Can to Toaster → Toaster Closing → Fridge Closing
-      </p> -->
-    </div>
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-kitchen1">
-            <video poster="" id="kitchen1" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/kitchen/kitchen1.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-kitchen2">
-            <video poster="" id="kitchen2" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/kitchen/kitchen2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-kitchen3">
-            <video poster="" id="kitchen3" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/kitchen/kitchen3.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-kitchen4">
-            <video poster="" id="kitchen4" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/kitchen/kitchen4.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-kitchen5">
-            <video poster="" id="kitchen5" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/kitchen/kitchen5.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero is-light is-small">
-    <div class="columns is-centered has-text-centered">
-      <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">Ant Multimodal</h5>
-      <!-- <p>
-        Can to Toaster → Toaster Closing → Fridge Closing
-      </p> -->
-    </div>
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-ant1">
-            <video poster="" id="ant1" autoplay controls muted loop playsinline height="200%">
-              <source src="./resources/movies/ant/ant1.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant2">
-            <video poster="" id="ant2" autoplay controls muted loop playsinline height="200%">
-              <source src="./resources/movies/ant/ant2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant3">
-            <video poster="" id="ant3" autoplay controls muted loop playsinline height="200%">
-              <source src="./resources/movies/ant/ant3.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant4">
-            <video poster="" id="ant4" autoplay controls muted loop playsinline height="200%">
-              <source src="./resources/movies/ant/ant4.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant5">
-            <video poster="" id="ant5" autoplay controls muted loop playsinline height="200%">
-              <source src="./resources/movies/ant/ant5.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-
-  <section class="hero is-light is-small">
-    <div class="columns is-centered has-text-centered">
-      <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">UR3 Multimodal</h5>
-      <!-- <p>
-        Can to Toaster → Toaster Closing → Fridge Closing
-      </p> -->
-    </div>
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-ant1">
-            <video poster="" id="ant1" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/ur3/ur3_1.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant2">
-            <video poster="" id="ant2" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/ur3/ur3_2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant3">
-            <video poster="" id="ant3" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/ur3/ur3_3.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-ant4">
-            <video poster="" id="ant4" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/ur3/ur3_4.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
 
-  <section class="hero is-light is-small">
-    <div class="columns is-centered has-text-centered">
-      <h5 class="title is-5" style="text-align: center; padding-bottom: 6px;">PushT</h5>
-      <!-- <p>
-        Can to Toaster → Toaster Closing → Fridge Closing
-      </p> -->
-    </div>
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-pusht1">
-            <video poster="" id="pusht1" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/pusht/pusht1.mp4"
-                      type="video/mp4">
-            </video>
+  <section class="section">
+    <div class="container"> <!-- This container aligns the button section with other content -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-half">
+          <div class="navigation-buttons">
+            <a href="./realworld_index.html" class="nav-button" id="realworld-button">
+              <span class="button-text">Real-World Videos</span>
+            </a>
           </div>
-          <div class="item item-pusht2">
-            <video poster="" id="pusht2" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/pusht/pusht2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-pusht3">
-            <video poster="" id="pusht3" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/pusht/pusht3.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-pusht4">
-            <video poster="" id="pusht4" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/pusht/pusht4.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-pusht5">
-            <video poster="" id="pusht5" autoplay controls muted loop playsinline height="100%">
-              <source src="./resources/movies/pusht/pusht5.mp4"
-                      type="video/mp4">
-            </video>
+        </div>
+        <div class="column is-half">
+          <div class="navigation-buttons">
+            <a href="./simulated_index.html" class="nav-button" id="simulated-button">
+              <span class="button-text">Simulated-World Videos</span>
+            </a>
           </div>
         </div>
       </div>
