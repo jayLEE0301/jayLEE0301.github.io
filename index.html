@@ -105,6 +105,43 @@
             </td>
           </tr> -->
 
+          <tr onmouseout="vqbet_stop()" onmouseover="vqbet_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='vqbet_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="vq-bet/resources/vqbet-thumbnail.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <source src="vq-bet/resources/vqbet-thumbnail.mp4" type="video/mp4">
+                <!-- <img src='vq-bet/resources/vqbet-thumbnail.mp4' width="160"> -->
+              </div>
+              <script type="text/javascript">
+                function vqbet_start() {
+                  document.getElementById('vqbet_image').style.opacity = "1";
+                }
+    
+                function vqbet_stop() {
+                  document.getElementById('vqbet_image').style.opacity = "0";
+                }
+                vqbet_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://sjlee.cc/vq-bet">
+                <span class="papertitle">VQ-BeT: Behavior Generation with Latent Actions</span>
+              </a>
+              <br>
+              <strong>Seungjae Lee</strong>, Yibin Wang, Haritheja Etukuru, H. Jin Kim, Nur Muhammad Mahi Shafiullah, Lerrel Pinto
+              <br>
+              Preprint
+              <br>
+              <a href="https://sjlee.cc/vq-bet">Project Page</a>
+              <p></p>
+              <p>
+                VQ-BeT augments BeT by tokenizing continuous actions with a hierarchical vector quantization module. Across seven environments including simulated manipulation, autonomous driving, and robotics, VQ-BeT improves on state-of-the-art models such as BeT and Diffusion Policies.
+              </p>
+            </td>
+          </tr>
 
       <tr onmouseout="cqm_stop()" onmouseover="cqm_start()"  bgcolor="#ffffd0">
         <td style="padding:20px;width:25%;vertical-align:middle">
