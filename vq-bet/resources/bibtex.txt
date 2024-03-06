@@ -1,1 +1,6 @@
-will be updated soon
+@article{lee2024behavior,
+  title={Behavior Generation with Latent Actions},
+  author={Seungjae Lee and Yibin Wang and Haritheja Etukuru and H. Jin Kim and Nur Muhammad Mahi Shafiullah and Lerrel Pinto},
+  journal={arXiv preprint arXiv:2403.03181},
+  year={2024}
+}
