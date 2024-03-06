@@ -178,6 +178,20 @@
               <span>Paper</span>
             </a>
           </span>
+          <!-- github Link. -->
+          <span class="link-block">
+            <a target="_blank" href="https://github.com/jayLEE0301/vq_bet_official"
+                class="external-link button is-normal is-rounded is-dark">
+              <span>Code</span>
+            </a>
+          </span>
+          <!-- bibtex Link. -->
+          <span class="link-block">
+            <a target="_blank" href="./resources/bibtex.txt"
+                class="external-link button is-normal is-rounded is-dark">
+              <span>Citation</span>
+            </a>
+          </span>
         </div>
         
       </div>
@@ -188,21 +202,6 @@
 
 </section>
 
-<section class="section">
-  <div class="container">
-  
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h2 class="title is-2">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Generative modeling of complex behaviors from labeled datasets has been a longstanding problem in decision-making. Unlike language or image generation, decision-making requires modeling actions – continuous-valued vectors that are multimodal in their distribution, potentially drawn from uncurated sources, where generation errors can compound in sequential prediction. A recent class of models called Behavior Transformers (BeT) addresses this by discretizing actions using k-means clustering to capture different modes. However, k-means struggles to scale for high-dimensional action spaces or long sequences and lacks gradient information, and thus BeT suffers in modeling long-range actions. In this work, we present Vector-Quantized Behavior Transformer (VQ-BeT), a versatile model for behavior generation that handles multimodal action prediction, conditional generation, and partial observations. VQ-BeT augments BeT by tokenizing continuous actions with a hierarchical vector quantization module. Across seven environments including simulated manipulation, autonomous driving, and robotics, VQ-BeT improves on state-of-the-art models such as BeT and Diffusion Policies. Importantly, we demonstrate VQ-BeT’s improved ability to capture behavior modes while accelerating inference speed 5× over Diffusion Policies. 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <section class="section">
@@ -329,6 +328,22 @@
 
   <section class="section">
     <div class="container">
+    
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h2 class="title is-2">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Generative modeling of complex behaviors from labeled datasets has been a longstanding problem in decision-making. Unlike language or image generation, decision-making requires modeling actions – continuous-valued vectors that are multimodal in their distribution, potentially drawn from uncurated sources, where generation errors can compound in sequential prediction. A recent class of models called Behavior Transformers (BeT) addresses this by discretizing actions using k-means clustering to capture different modes. However, k-means struggles to scale for high-dimensional action spaces or long sequences and lacks gradient information, and thus BeT suffers in modeling long-range actions. In this work, we present Vector-Quantized Behavior Transformer (VQ-BeT), a versatile model for behavior generation that handles multimodal action prediction, conditional generation, and partial observations. VQ-BeT augments BeT by tokenizing continuous actions with a hierarchical vector quantization module. Across seven environments including simulated manipulation, autonomous driving, and robotics, VQ-BeT improves on state-of-the-art models such as BeT and Diffusion Policies. Importantly, we demonstrate VQ-BeT’s improved ability to capture behavior modes while accelerating inference speed 5× over Diffusion Policies. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <section class="section">
+    <div class="container">
   <!-- Method. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-two-thirds">
@@ -362,19 +377,19 @@
         </p>
       </div>
       <div class="columns is-centered has-text-centered">
-        <img src="./resources/unconditional_with_numbers_page-0001.jpg" style="width: 100%;" alt="vq-bet">
+        <img src="./resources/unconditional_table_.png" style="width: 100%;" alt="vq-bet">
       </div>
       <div class="content has-text-justified">
         <p>
-          Evaluation of unconditional tasks in simulation environments of VQ-BeT and related baselines. VQ-BeT achieves the best performance in most simulation environments and comparable performance with the best baseline on BlockPush and Image Kitchen.
+          Evaluation of unconditional tasks in simulation environments of VQ-BeT and related baselines.
         </p>
       </div>
       <div class="columns is-centered has-text-centered">
-        <img src="./resources/conditional_with_numbers_page-0001.jpg" style="width: 100%;" alt="vq-bet">
+        <img src="./resources/conditional_table_.png" style="width: 100%;" alt="vq-bet">
       </div>
       <div class="content has-text-justified">
         <p>
-          Evaluation of conditional tasks in simulation environments of VQ-BeT and related baselines. VQ-BeT achieves the best performance in most simulation environments and comparable performance with the best baseline on BlockPush.
+          Evaluation of conditional tasks in simulation environments of VQ-BeT and related baselines.
         </p>
       </div>
     </div>
