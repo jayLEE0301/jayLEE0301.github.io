@@ -133,3 +133,36 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+h1 {
+  color: blue;
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 7px;
+  margin: 3px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+}
+
+.green {
+  background-color: #68b016; /* Green */
+}
+
+.orange {
+  background-color: #e48900; /* Orange */
+}
+
+.blue {
+  background-color: #211ee9; /* blue */
+}
+
+.red {
+  background-color: #f70053; /* Red */
+}
+
+.gray {
+  background-color: #393939; /* Gray */
+}
