@@ -97,6 +97,42 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="rum_stop()" onmouseover="rum_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='rum_video'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/rum_button_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='images/rum_button_thumbnail.png' width="160" height="160">
+              </div>
+              <script type="text/javascript">
+                function rum_start() {
+                  document.getElementById('rum_video').style.opacity = "1";
+                }
+    
+                function rum_stop() {
+                  document.getElementById('rum_video').style.opacity = "0";
+                }
+                rum_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://sjlee.cc/vq-bet">
+                <span class="papertitle">Robot Utility Models: General Policies for Zero-Shot Deployment in New Environments</span>
+              </a>
+              <br>
+              Haritheja Etukuru, Norihito Naka, Zijin Hu, <strong>Seungjae Lee</strong>, Julian Mehu, Aaron Edsinger, Chris Paxton, Soumith Chintala, Lerrel Pinto, Nur Muhammad Mahi Shafiullah
+              <br>
+              <a href="https://robotutilitymodels.com/">project website</a>/
+              <a href="https://robotutilitymodels.com/mfiles/paper/Robot_Utility_Models.pdf">paper</a>/
+              <a href="https://github.com/haritheja-e/robot-utility-models/">github</a>/
+              <p></p>
+              <p>
+                Robot Utility Models (RUMs) is a simple method to build zero-shot robot policies that can solve useful tasks in completely new homes without any additional training often at 90%+ success rate. 
+                </p>
+            </td>
+          </tr>
 
           <tr onmouseout="vqbet_stop()" onmouseover="vqbet_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
