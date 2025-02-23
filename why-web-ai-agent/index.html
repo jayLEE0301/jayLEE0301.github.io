@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHCTV7KG');</script>
+    <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Are Web AI Agents More Vulnerable Than Standard LLMs?</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .navigation-buttons {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+      max-width: 900px; /* Example: match Bulma's container max-width at certain breakpoints */
+      margin: 0 auto; /* Center align the div */
+    }
+    
+    .nav-button {
+    flex: 1;
+    display: inline-flex;
+    align-items: flex-end; /* Align items to the end (bottom) of the container */
+    justify-content: center;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 10px;
+    height: 280px;
+    border-radius: 25px;
+    filter: grayscale(100%);
+    text-decoration: none; /* Removes underline from links */
+    position: relative; /* Ensures the button is positioned relatively for absolute positioning of text */
+  }
+  
+  .button-text {
+    background-color: rgba(128, 128, 128, 0.5); /* Semi-transparent gray */
+    color: white; /* Text color */
+    padding: 5px 10px; /* Adjust padding for readability */
+    border-radius: 5px; /* Optional: adds rounded corners to the text background */
+    position: absolute; /* Position the text absolutely within the button */
+    bottom: 10px; /* Distance from the bottom of the button */
+  }
+  
+  .nav-button:hover .button-text {
+    color: black; /* Changes text color on hover */
+    background-color: rgba(255, 255, 255, 1); 
+  }
+  .nav-button:hover {
+    filter: grayscale(0%);
+  }
+    
+    #realworld-button {
+      background-image: url('./resources/button_realworld_gray.png');
+    }
+
+    #realworld-button:hover {
+      background-image: url('./resources/button_realworld_gray.png');
+    }
+    
+    #simulated-button {
+      background-image: url('./resources/button_simulated_gray.png');
+    }
+    
+    #simulated-button:hover {
+      background-image: url('./resources/button_simulated_gray.png');
+    }
+
+    #driving-button {
+      background-image: url('./resources/driving_button.png');
+    }
+    
+    #code-button {
+      background-image: url('./resources/codebase_button.png');
+    }
+    
+    </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHCTV7KG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Why Are Web AI Agents More Vulnerable Than Standard LLMs? </h1>
+          <h2 class="title is-2">A Security Analysis</h2>
+          <!-- <p class="subtitle">ICML 2024 Spotlight</p> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://santaboi.github.io/">Jeffrey Yang Fan Chiang</a>*&nbsp;&nbsp;
+              <a target="_blank" href="https://sjlee.cc/">Seungjae Lee</a>*&nbsp;&nbsp;
+              <a target="_blank" href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>&nbsp;&nbsp;
+              <a target="_blank" href="https://furong-huang.com/">Furong Huang</a>&nbsp;&nbsp;
+              <a target="_blank" href="https://surrealyz.github.io/">Yizheng Chen</a>&nbsp;&nbsp;
+              <br />University of Maryland
+              <br />* equal contribution
+            </span>
+          </div>
+        <div class="column has-text-centered">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a target="_blank" href="https://arxiv.org/abs/TODO"
+                class="external-link button is-normal is-rounded is-dark">
+              <span>Paper</span>
+            </a>
+          </span>
+
+          <!-- bibtex Link. -->
+          <span class="link-block">
+            <a target="_blank" href="./resources/bibtex.txt"
+                class="external-link button is-normal is-rounded is-dark">
+              <span>Citation</span>
+            </a>
+          </span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+</section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="columns is-centered has-text-centered">
+            <video class="center" playsinline autoplay loop muted src="./resources/movies/webagent.mp4" width="100%"
+                style="border-radius:10px;"></video>
+          </div>
+          <p class="has-text-weight-medium mt-5">
+            <span class="has-text-danger has-text-weight-semibold">Warning: this paper contains potentially harmful text.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <br /><br />
+          <h3 class="title is-3 has-text-primary">
+            Web Agents are Significantly <br \>More Vulnerable
+          </h3>
+          <br />
+            <p>
+              (Click the right arrow button to navigate through the videos.)
+            </p>
+          <div class="video-carousel">
+            <!-- <button class="nav-button left" onclick="prevVideo()">&#10094;</button> -->
+            <div class="video-wrapper">
+              <div class="video-container" id="video0">
+                <video playsinline autoplay loop muted src="./resources/movies/example3.mp4" width="100%" style="border-radius:10px;"></video>
+                <h5 class="title is-5">Case 1. Ask the agent to infiltrate a network system (Click Next)</h5>
+              </div>
+              <div class="video-container" id="video1" style="display: none;">
+                <video playsinline autoplay loop muted src="./resources/movies/example1.mp4" width="100%" style="border-radius:10px;"></video>
+                <h5 class="title is-5">Case 2. Ask the agent to post insulting comments (Click Next)</h5>
+              </div>
+              <div class="video-container" id="video2" style="display: none;">
+                <video playsinline autoplay loop muted src="./resources/movies/example2.mp4" width="100%" style="border-radius:10px;"></video>
+                <h5 class="title is-5">Case 3. Ask the agent to write a phishing Email (Click Next)</h5>
+              </div>
+            </div>
+            <button class="nav-button right" onclick="nextVideo()">&#10095;</button>
+          </div>
+          <div class="content has-text-justified">
+            <br/><br/>
+            <span class="has-text-weight-semibold has-text-info">Behavioral Disparity Between Web AI Agents and Standalone LLMs</span>
+            <br/><br/>
+            <div class="box has-background-light p-5">
+              🛑 Despite being built on the same underlying LLM, Web AI agents exhibit <strong>significantly different behaviors</strong> when exposed to identical malicious inputs.  
+              <br/><br/>
+              ⚠️ Notably, the Web AI agent demonstrates a <strong>higher susceptibility</strong> to executing harmful commands, raising concerns about its structural vulnerabilities compared to its standalone counterpart.
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    let videos = ["video0", "video1", "video2"];
+    let currentIndex = 0;
+  
+    function showVideo(index) {
+      videos.forEach((id, i) => {
+        document.getElementById(id).style.display = i === index ? "block" : "none";
+      });
+    }
+  
+    function prevVideo() {
+      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+      showVideo(currentIndex);
+    }
+  
+    function nextVideo() {
+      currentIndex = (currentIndex + 1) % videos.length;
+      showVideo(currentIndex);
+    }
+  </script>
+  
+  <style>
+    .video-carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .video-container {
+      text-align: center;
+    }
+    .nav-button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .left { left: 0; }
+    .right { right: 0; }
+  </style>
+
+
+<section class="section">
+  <div class="container">
+  
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <br /><br />
+        <h3 class="title is-3 has-text-primary">
+          Root Cause Analysis of <br/> Web AI Agent Vulnerabilities
+        </h3>
+        <br />
+        <div class="columns is-centered has-text-centered">
+          <video class="center" playsinline autoplay loop muted src="./resources/movies/levelsofjailbreaking.mov" width="100%"
+              style="border-radius:10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);"></video>
+        </div>
+        <div class="content has-text-justified">
+          <br/>
+          <span class="has-text-weight-semibold has-text-info">Evaluation protocol for jailbreak susceptibility</span><br/>
+          <br/>
+          🔍 This disparity stems from the multifaceted differences between Web AI agents and standalone LLMs, as well as the complex signals—nuances that simple evaluation metrics, such as success rate, often fail to capture. 
+          <br/><br/>
+          <ul class="box has-background-light p-5">
+            To tackle these challenges, we propose a <strong>Five-level Harmfulness Evaluation Framework</strong> for a more granular and systematic evaluation.
+          </ul>
+        </div>
+        <br/>
+        <img src="./resources/updated_final_fig_icon.png" style="width: 100%; border-radius: 10px;" alt="ablation">
+        <div class="content has-text-justified">
+          <br/>
+          <br/>
+          <span class="has-text-weight-semibold has-text-info">Fine-grained ablation of Web AI agent components</span>
+          <br/>
+          <br/>
+          
+          🔍 To systematically analyze these weaknesses, we categorize Web AI agent components into <strong>three key factors:</strong>
+          <br/><br/>
+          <ul class="box has-background-light p-5">
+
+            
+            <li class="mb-3">
+              <span class="icon has-text-primary">
+                <i class="fas fa-tasks"></i>
+              </span> 
+              <strong>Factor 1. Goal Preprocessing</strong>
+            </li>
+            
+            <li class="mb-3">
+              <span class="icon has-text-warning">
+                <i class="fas fa-arrows-alt"></i>
+              </span> 
+              <strong>Factor 2. Action Space</strong>
+            </li>
+            
+            <li class="mb-3">
+              <span class="icon has-text-danger">
+                <i class="fas fa-history"></i>
+              </span> 
+              <strong>Factor 3. Event Stream / Web Browser</strong>
+            </li>
+          </ul>
+          <br/>
+          Our objective is to determine whether these design differences contribute to increased vulnerability, making Web AI agents more susceptible to executing malicious commands. 
+          <br/><br/>
+          By breaking down these components, we provide a <strong>fine-grained analysis</strong> of the underlying risks, moving beyond a high-level comparison to uncover the specific structural elements that heighten security risks in Web AI agents.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <section class="section">
+      <div class="container">
+        
+        <!-- Abstract Section -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-two-thirds">
+            <br /><br />
+            <h3 class="title is-3 has-text-primary">
+              Actionable Insights for <br /> Targeted Defense Strategies
+            </h3>
+            <br />
+            <div class="content has-text-justified">
+              <p class="has-text-weight-medium">
+                Through a <strong>fine-grained analysis</strong> of key differences between Web AI agents and standalone LLMs, we systematically identified several design factors contributing to vulnerabilities.
+              </p>
+              <br />
+              <p class="has-text-weight-semibold has-text-info">
+                🔍 Our findings reveal several actionable insights:
+              </p>
+              
+              <ul class="box has-background-light p-5">
+                <li class="mb-3">
+                  <span class="icon has-text-danger">
+                    <i class="fas fa-exclamation-circle"></i>
+                  </span> 
+                  <strong>Embedding user goals</strong> within system prompts significantly increases jailbreak success rates. 
+                  <em>Paraphrasing user goals</em> further heightens vulnerabilities.
+                </li>
+                
+                <li class="mb-3">
+                  <span class="icon has-text-warning">
+                    <i class="fas fa-arrows-alt"></i>
+                  </span> 
+                  <strong>Predefined action spaces</strong> in multi-turn strategies make systems more susceptible to executing harmful tasks, especially when user goals are embedded.
+                </li>
+                
+                <li class="mb-3">
+                  <span class="icon has-text-success">
+                    <i class="fas fa-globe"></i>
+                  </span> 
+                  <strong>Mock-up websites</strong> do not directly promote harmful intent but facilitate effective task execution for malicious objectives.
+                </li>
+                
+                <li class="mb-3">
+                  <span class="icon has-text-danger">
+                    <i class="fas fa-history"></i>
+                  </span> 
+                  <strong>Event Stream tracking</strong> amplifies harmful behavior by allowing iterative refinement, increasing susceptibility to adversarial manipulation.
+                </li>
+              </ul>
+    
+              <p class="has-text-weight-medium mt-5">
+                These findings highlight how specific design elements—<span class="has-text-danger has-text-weight-semibold">goal processing, action generation strategies,</span> and <span class="has-text-danger has-text-weight-semibold">dynamic web interactions</span>—contribute to the overall risk of harmful behavior.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Source code credit to <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

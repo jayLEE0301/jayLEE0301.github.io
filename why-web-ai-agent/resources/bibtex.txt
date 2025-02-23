@@ -1,0 +1,6 @@
+@article{Jeffrey2025Why,
+  title={Why Are Web AI agents more vulnerable than standard LLMs? A Security Analysis},
+  author={Jeffrey Yang Fan Chiang and Seungjae Lee and Jia-Bin Huang and Furong Huang and Yizheng Chen},
+  journal={arXiv preprint arXiv:TODO},
+  year={2025}
+}
