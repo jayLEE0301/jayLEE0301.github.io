@@ -120,9 +120,8 @@ h2 {
   height: 160px;
   position: absolute;
   overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
@@ -130,11 +129,11 @@ h2 {
 
 .two video {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  width: auto;
-  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 .fade {
@@ -182,4 +181,439 @@ h1 {
 
 .purple {
   background-color: #aa00ff; /* Gray */
+}
+
+/* Global Styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --background-color: #f8f9fa;
+  --section-spacing: 2rem;
+  --content-width: 1000px;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+/* Header Styles */
+.header {
+  padding: var(--section-spacing) 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.header-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.name {
+  font-size: 2.8rem;
+  margin: 0 0 1rem;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(120deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-image {
+  flex-shrink: 0;
+  padding-right: 20px;
+}
+
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Section Styles */
+.section {
+  padding: var(--section-spacing) 0;
+  border-top: 1px solid #eee;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* List Styles */
+.news-list, .awards-list, .services-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-list li, .awards-list li, .services-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.news-list li:before, .awards-list li:before, .services-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+/* Education Styles */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.institution-logo {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.education-details h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.education-details p {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+/* Research and Project Styles */
+.research-list, .projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.research-item, .project-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.research-image, .project-image {
+  flex-shrink: 0;
+  width: 160px;
+}
+
+.research-content, .project-content {
+  flex: 1;
+}
+
+.papertitle {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Hover Effects */
+.one {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.one:hover .two {
+  opacity: 1;
+}
+
+/* Tag Styles */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.tag.blue { background-color: #e6f3ff; color: #0066cc; }
+.tag.green { background-color: #e6ffe6; color: #006600; }
+.tag.orange { background-color: #fff3e6; color: #cc6600; }
+.tag.purple { background-color: #f3e6ff; color: #6600cc; }
+.tag.red { background-color: #ffe6e6; color: #cc0000; }
+.tag.gray { background-color: #f2f2f2; color: #666666; }
+
+/* Link Styles */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #004499;
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: right;
+  padding: 1rem 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+/* Experience Styles */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.experience-item .institution-logo {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.experience-details h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.experience-details p {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+/* Disable hover effects on mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .two {
+    display: none !important;
+  }
+  
+  .one:hover .two {
+    opacity: 0 !important;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body, td, th, tr, p, a {
+    font-size: 13px;
+  }
+
+  .name {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .papertitle {
+    font-size: 13px;
+  }
+
+  .one {
+    width: 140px;
+    height: 140px;
+  }
+
+  .two {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 2px 5px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-image {
+    margin-top: 1rem;
+  }
+
+  .profile-photo {
+    width: 150px;
+  }
+
+  .research-item, .project-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .research-image, .project-image {
+    margin-bottom: 1rem;
+  }
+
+  .education-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .institution-logo {
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-links a {
+    margin: 0;
+  }
+
+  .experience-item {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .experience-item .institution-logo {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body, td, th, tr, p, a {
+    font-size: 12px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .papertitle {
+    font-size: 12px;
+  }
+
+  .one {
+    width: 120px;
+    height: 120px;
+  }
+
+  .two {
+    width: 120px;
+    height: 120px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .section {
+    padding: 1.5rem 0;
+  }
+
+  .research-content, .project-content {
+    font-size: 0.95rem;
+  }
+
+  .research-image img, .project-image img {
+    width: 140px;
+    height: auto;
+  }
+
+  .experience-item {
+    gap: 0.8rem;
+  }
+
+  .experience-item .institution-logo {
+    width: 80px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    font-size: 12pt;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .header-image {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
 }
