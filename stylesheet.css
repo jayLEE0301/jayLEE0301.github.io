@@ -152,11 +152,9 @@ h1 {
 
 .tag {
   display: inline-block;
-  padding: 3px 7px;
-  margin: 3px;
-  border-radius: 4px;
   color: white;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .green {
@@ -383,6 +381,7 @@ body {
 .tag.purple { background-color: #f3e6ff; color: #6600cc; }
 .tag.red { background-color: #ffe6e6; color: #cc0000; }
 .tag.gray { background-color: #f2f2f2; color: #666666; }
+.tag.red_transparent { background-color: transparent; color: #cc3333; }
 
 /* Link Styles */
 a {
@@ -443,7 +442,7 @@ a:hover {
   .two {
     display: none !important;
   }
-  
+
   .one:hover .two {
     opacity: 0 !important;
   }
