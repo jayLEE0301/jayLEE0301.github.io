@@ -132,6 +132,33 @@
         <div class="research-item">
           <div class="research-image">
             <div class="one">
+              <div class="two" id='tracegen_video'>
+                <img src='images/tracegen_thumbnail.mp4' width="160" height="160">
+              </div>
+              <video width="160" height="160" muted autoplay loop style="object-fit: cover;">
+                <source src="images/tracegen_thumbnail.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div class="research-content">
+            <a href="https://tracegen.github.io/">
+              <span class="papertitle">TraceGen: World Modeling in 3D Trace-Space Enables Learning from Cross-Embodiment Videos</span>
+            </a>
+            <br>
+            <strong>Seungjae Lee</strong>*, Yoonkyo Jung*, Inkook Chun*, Yao-Chih Lee, Zikui Cai, Hongjia Huang, Aayush Talreja, Tan Dat Dao, Yongyuan Liang, Jia-Bin Huang, Furong Huang
+            <br>
+            (*equal contribution)
+            <br>
+            <a href="https://tracegen.github.io/">project website</a> /
+            <a href="https://arxiv.org/abs/2511.21690">arXiv</a>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="research-item">
+          <div class="research-image">
+            <div class="one">
               <div class="two" id='d2c_image'>
                 <img src='images/sequential_eqa.png' width="160" height="160">
               </div>
@@ -178,7 +205,6 @@
         </div>
 
 
-        <div class="research-list">
           <div class="research-item">
             <div class="research-image">
               <div class="one">
@@ -211,7 +237,6 @@
             </div>
           </div>
 
-        <div class="research-list">
           <div class="research-item">
             <div class="research-image">
               <div class="one">
@@ -671,7 +696,7 @@
       // Initialize all hover effects
       document.addEventListener('DOMContentLoaded', () => {
         const hoverElements = [
-          'webai_video', 'rum_video', 'vqbet_video', 'cqm_image',
+          'tracegen_video', 'webai_video', 'rum_video', 'vqbet_video', 'cqm_image',
           'd2c_image', 'snerl_image', 'outpace_image', 'ijcas_image',
           'dhrl_image', 'iros_image', 'hdx_image', 'ic01_image'
         ];
