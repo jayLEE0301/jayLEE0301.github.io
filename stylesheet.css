@@ -507,6 +507,16 @@ body {
     font-weight: 700;
 }
 
+.star-icon {
+    display: inline-block;
+    color: var(--accent-color);
+    margin-left: 6px;
+    font-size: 0.95em;
+    line-height: 1;
+    vertical-align: text-top;
+    font-family: inherit;
+}
+
 .tag-strong {
     background-color: inherit;
     border-color: inherit;
