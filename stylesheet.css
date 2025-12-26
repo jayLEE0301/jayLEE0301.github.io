@@ -162,30 +162,35 @@ h2 {
 }
 
 .one {
-    width: 160px;
-    height: 160px;
     position: relative;
+    width: 320px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .two {
-    width: 160px;
-    height: 160px;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    -webkit-transition: opacity 0.2s ease-in-out;
-}
-
-.two video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    border-radius: inherit;
+}
+
+.two video,
+.one video,
+.one img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
+    border-radius: inherit;
 }
 
 .fade {
@@ -412,6 +417,14 @@ body {
     gap: 2rem;
 }
 
+.section > .research-item {
+    margin-bottom: 2rem;
+}
+
+.section > .research-item:last-of-type {
+    margin-bottom: 2rem;
+}
+
 .research-item,
 .project-item {
     display: flex;
@@ -422,7 +435,7 @@ body {
 .research-image,
 .project-image {
     flex-shrink: 0;
-    width: 160px;
+    width: 320px;
 }
 
 .research-content,
@@ -438,8 +451,9 @@ body {
 /* Hover Effects */
 .one {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 320px;
+    aspect-ratio: 16 / 9;
+    height: auto;
 }
 
 .two {
@@ -593,18 +607,22 @@ a:hover {
     }
 
     .one {
-        width: 140px;
-        height: 140px;
+        width: 260px;
     }
 
     .two {
-        width: 140px;
-        height: 140px;
+        width: 100%;
+        height: 100%;
     }
 
     .tag {
         font-size: 12px;
         padding: 2px 5px;
+    }
+
+    .research-image,
+    .project-image {
+        width: 260px;
     }
 
     .header-content {
@@ -686,13 +704,12 @@ a:hover {
     }
 
     .one {
-        width: 120px;
-        height: 120px;
+        width: 220px;
     }
 
     .two {
-        width: 120px;
-        height: 120px;
+        width: 100%;
+        height: 100%;
     }
 
     .tag {
@@ -715,8 +732,14 @@ a:hover {
 
     .research-image img,
     .project-image img {
-        width: 140px;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .research-image,
+    .project-image {
+        width: 220px;
     }
 
     .experience-item {
