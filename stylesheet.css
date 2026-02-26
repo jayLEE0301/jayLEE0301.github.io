@@ -676,6 +676,43 @@ a:hover {
     font-size: 0.9rem;
 }
 
+/* Education & Experiences two-column grid */
+.edu-exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.edu-column,
+.exp-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-column .education-list,
+.exp-column .experience-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.column-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-strong);
+    margin: 0 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+@media screen and (max-width: 768px) {
+    .edu-exp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Experience Styles */
 .experience-list {
     display: flex;
