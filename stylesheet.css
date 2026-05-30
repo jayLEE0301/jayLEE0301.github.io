@@ -392,17 +392,16 @@ body {
 }
 
 .name {
-    font-size: 2.8rem;
-    margin: 0 0 1rem;
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    margin: 0 0 1.25rem;
     text-align: center;
     color: var(--primary-color);
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-weight: 800;
+    letter-spacing: -1px;
     background: var(--heading-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-image {
@@ -849,7 +848,9 @@ a:hover {
 
     .social-links {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.5rem;
     }
 
@@ -1061,5 +1062,188 @@ a:hover {
     .github-link .tag {
         font-size: 1rem;
         padding: 0.4rem 0.8rem;
+    }
+}
+
+/* ============================================================
+   Design refresh (2026) — additive refinements.
+   Layered as overrides; nothing above is removed, so reverting
+   is as simple as deleting this block.
+   ============================================================ */
+
+/* Border-box reset — fixes pre-existing mobile horizontal overflow
+   (padding/borders no longer add to declared widths). .institution-logo
+   already opts into content-box explicitly, so it is unaffected. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Custom scrollbar (WebKit) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+    border: 3px solid var(--background-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-strong);
+}
+
+/* Container: a touch more breathing room + softer elevation */
+.container {
+    box-shadow: 0 10px 40px var(--card-shadow);
+}
+
+/* Fluid, tighter name */
+.header .name {
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1.25rem;
+}
+
+/* Profile photo: accent ring + depth + gentle hover */
+.profile-photo {
+    width: 210px;
+    border-radius: 14px;
+    border: 3px solid var(--surface-color);
+    box-shadow:
+        0 0 0 3px var(--accent-color),
+        0 12px 28px var(--card-hover-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-photo:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow:
+        0 0 0 3px var(--accent-gold),
+        0 16px 34px var(--card-hover-shadow);
+}
+
+/* Section headings: gradient accent marker + clearer hierarchy */
+.section h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 800;
+    font-size: 1.75rem;
+}
+.section h2::before {
+    content: "";
+    width: 6px;
+    height: 1.4em;
+    border-radius: 6px;
+    background: var(--heading-gradient);
+    flex-shrink: 0;
+}
+
+/* Social links → pill buttons */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+.social-links a {
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: var(--tag-bg);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-strong);
+    font-weight: 700;
+    line-height: 1;
+    transition: background 0.25s ease, color 0.25s ease,
+        transform 0.25s ease, box-shadow 0.25s ease;
+}
+.social-links a:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px var(--card-hover-shadow);
+}
+
+/* News list → subtle cards with an accent slide on hover */
+.news-list li {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 0.7rem 1rem 0.7rem 1.6rem;
+    margin-bottom: 0.6rem;
+    transition: border-color 0.25s ease, transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+.news-list li:hover {
+    transform: translateX(4px);
+    border-color: var(--card-hover-border);
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+.news-list li:before {
+    left: 0.65rem;
+    color: var(--accent-color);
+    font-size: 1.2em;
+    line-height: 1.35;
+}
+
+/* Research / project cards: rounder, livelier lift */
+.research-item,
+.project-item {
+    border-radius: 18px;
+}
+.research-item:hover,
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Venue sticker → filled gradient pill that reads in both themes */
+.research-item .tag.sticker,
+.project-item .tag.sticker,
+[data-theme="dark"] .research-item .tag.sticker,
+[data-theme="dark"] .project-item .tag.sticker {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-strong));
+    color: #ffffff;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    box-shadow: 0 4px 12px var(--card-hover-shadow);
+}
+
+/* Animated underline for inline links inside body copy & research rows */
+.research-content a:not(.papertitle):not(:has(.papertitle)),
+.header-text p a {
+    background-image: linear-gradient(var(--accent-gold), var(--accent-gold));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1.5px;
+    transition: background-size 0.25s ease, color 0.2s ease;
+}
+.research-content a:not(.papertitle):not(:has(.papertitle)):hover,
+.header-text p a:hover {
+    background-size: 100% 1.5px;
+}
+
+@media screen and (max-width: 480px) {
+    .profile-photo {
+        width: 150px;
+    }
+    .section h2 {
+        font-size: 1.45rem;
     }
 }
