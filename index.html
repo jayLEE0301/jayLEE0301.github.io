@@ -22,6 +22,12 @@
   </head>
 
   <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="theme-icon">&#9728;</span>
+      <span class="theme-label">Dark</span>
+    </button>
+
     <div class="container">
       <!-- Header Section -->
       <header class="header">
@@ -58,9 +64,7 @@
             </div>
           </div>
           <div class="header-image">
-            <a href="images/sjlee_me.png">
-              <img src="images/sjlee_me.png" alt="profile photo" class="profile-photo">
-            </a>
+            <img src="images/sjlee_me.png" alt="profile photo" class="profile-photo">
           </div>
         </div>
       </header>
@@ -771,8 +775,46 @@
       </footer>
     </div>
 
-    <!-- JavaScript for hover effects -->
+    <!-- JavaScript for hover effects and theme toggle -->
     <script>
+      // Theme toggle functionality
+      (function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const themeLabel = themeToggle.querySelector('.theme-label');
+        const html = document.documentElement;
+
+        function updateButton(theme) {
+          if (theme === 'dark') {
+            themeIcon.innerHTML = '&#9790;'; // Moon
+            themeLabel.textContent = 'Light';
+          } else {
+            themeIcon.innerHTML = '&#9728;'; // Sun
+            themeLabel.textContent = 'Dark';
+          }
+        }
+
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+          html.setAttribute('data-theme', 'dark');
+        }
+        updateButton(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = html.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+          if (newTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+          } else {
+            html.removeAttribute('data-theme');
+          }
+          localStorage.setItem('theme', newTheme);
+          updateButton(newTheme);
+        });
+      })();
+
       // Common function for hover effects
       function setupHoverEffect(id) {
         const element = document.getElementById(id);
