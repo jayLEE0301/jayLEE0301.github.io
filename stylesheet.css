@@ -306,51 +306,6 @@ h1 {
     51%, 100% { opacity: 0; }
 }
 
-/* Theme toggle button */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: var(--surface-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 24px;
-    width: 90px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--accent-color);
-    box-shadow: 0 4px 12px var(--card-shadow);
-    transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px var(--card-hover-shadow);
-    background: var(--accent-color);
-    color: white;
-}
-
-.theme-toggle .theme-icon {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover .theme-icon {
-    transform: rotate(20deg);
-}
-
-.theme-toggle .theme-label {
-    font-family: "Lato", sans-serif;
-    min-width: 36px;
-    text-align: center;
-}
-
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
@@ -759,18 +714,6 @@ a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-        width: 80px;
-        height: 36px;
-        font-size: 12px;
-    }
-
-    .theme-toggle .theme-icon {
-        font-size: 16px;
-    }
-
     body,
     td,
     th,
@@ -950,10 +893,6 @@ a:hover {
     }
 
     .header-image {
-        display: none;
-    }
-
-    .theme-toggle {
         display: none;
     }
 
@@ -1154,30 +1093,59 @@ html {
     flex-shrink: 0;
 }
 
-/* Social links → pill buttons */
+/* Social links → minimal editorial nav (no button shape):
+   uppercase letter-spaced labels, hairline dividers, gradient
+   underline that grows from the center on hover. */
 .social-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
+    align-items: center;
+    gap: 0.4rem 0;
+    margin-top: 1.75rem;
 }
 .social-links a {
-    padding: 0.45rem 1.1rem;
-    border-radius: 999px;
-    background: var(--tag-bg);
-    border: 1px solid var(--accent-color);
-    color: var(--accent-strong);
-    font-weight: 700;
-    line-height: 1;
-    transition: background 0.25s ease, color 0.25s ease,
-        transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    padding: 0.2rem 1.15rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+/* hairline divider before every item except the first */
+.social-links a + a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 0.95em;
+    background: var(--border-color);
+}
+/* gradient underline grows from center on hover */
+.social-links a::after {
+    content: "";
+    position: absolute;
+    left: 1.15rem;
+    right: 1.15rem;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--heading-gradient);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
 }
 .social-links a:hover {
-    background: var(--accent-color);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px var(--card-hover-shadow);
+    color: var(--accent-strong);
+}
+.social-links a:hover::after {
+    transform: scaleX(1);
 }
 
 /* News list → subtle cards with an accent slide on hover */
@@ -1245,5 +1213,35 @@ html {
     }
     .section h2 {
         font-size: 1.45rem;
+    }
+}
+
+/* Auto dark mode via OS preference — replaces the removed manual toggle.
+   Same palette the toggle used. Delete this block to make the site light-only. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #e2e8f0;
+        --secondary-color: #cbd5e1;
+        --accent-color: #2dd4bf;
+        --accent-strong: #5eead4;
+        --accent-gold: #fbbf24;
+        --heading-gradient: linear-gradient(120deg, #14b8a6, #2dd4bf, #5eead4);
+        --background-color: #0f172a;
+        --surface-color: #1e293b;
+        --section-bg: #1e293b;
+        --header-bg: linear-gradient(135deg, rgba(45, 212, 191, 0.05), rgba(251, 191, 36, 0.02)),
+            linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        --card-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        --card-border: #334155;
+        --card-hover-border: #475569;
+        --card-shadow: rgba(0, 0, 0, 0.2);
+        --card-hover-shadow: rgba(0, 0, 0, 0.3);
+        --tag-bg: #1e293b;
+        --tag-border: #334155;
+        --tag-color: #5eead4;
+        --sticker-bg: #0f766e;
+        --text-color: #e2e8f0;
+        --text-muted: #94a3b8;
+        --border-color: #334155;
     }
 }

@@ -22,12 +22,6 @@
   </head>
 
   <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <span class="theme-icon">&#9728;</span>
-      <span class="theme-label">Dark</span>
-    </button>
-
     <div class="container">
       <!-- Header Section -->
       <header class="header">
@@ -137,7 +131,7 @@
                 <img src='images/nvidia-logo-vert-blk.png' alt="NVIDIA Logo" class="institution-logo">
                 <div class="experience-details">
                   <h3>NVIDIA</h3>
-                  <p>GEAR Team Research Intern (Upcoming)</p>
+                  <p>GEAR Team Research Intern</p>
                   <p><em>May 2026 -  | Santa Clara, CA</em></p>
                 </div>
               </div>
@@ -193,6 +187,8 @@
             <br>
             Zhi Wang, Botao He, Kelin Yu, <strong>Seungjae Lee</strong>, Ruohan Gao, Furong Huang, Yiannis Aloimonos
             <br>
+            <span class="tag sticker">arXiv, 2026</span>
+            <br>
             Under review
             <br>
             <a href="https://humanego-ai.github.io/">project website</a> /
@@ -219,6 +215,8 @@
             <br>
             Jusuk Lee, <strong>Seungjae Lee</strong>, Jonghun Shin, Hoseong Jung, Sungha Kim, Daesol Cho, H. Jin Kim, Jia-Bin Huang&dagger;, Furong Huang&dagger; (&dagger;equal advising)
             <br>
+            <span class="tag sticker">arXiv, 2026</span>
+            <br>
             Under review
             <br>
             <a href="https://dynaflip-robotics.github.io/">project website</a> /
@@ -243,6 +241,8 @@
             </a>
             <br>
             Jeremy A. Collins, <strong>Seungjae Lee</strong>, Rachanon Wachakorn, Krishnan Srinivasan, Animesh Garg, Vitor Campagnolo Guizilini, Paarth Shah
+            <br>
+            <span class="tag sticker">arXiv, 2026</span>
             <br>
             Under review
             <br>
@@ -771,46 +771,8 @@
       </footer>
     </div>
 
-    <!-- JavaScript for hover effects and theme toggle -->
+    <!-- JavaScript for hover effects -->
     <script>
-      // Theme toggle functionality
-      (function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
-        const themeLabel = themeToggle.querySelector('.theme-label');
-        const html = document.documentElement;
-
-        function updateButton(theme) {
-          if (theme === 'dark') {
-            themeIcon.innerHTML = '&#9790;'; // Moon
-            themeLabel.textContent = 'Light';
-          } else {
-            themeIcon.innerHTML = '&#9728;'; // Sun
-            themeLabel.textContent = 'Dark';
-          }
-        }
-
-        // Check for saved theme preference or default to light
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-          html.setAttribute('data-theme', 'dark');
-        }
-        updateButton(savedTheme);
-
-        themeToggle.addEventListener('click', () => {
-          const currentTheme = html.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          if (newTheme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-          } else {
-            html.removeAttribute('data-theme');
-          }
-          localStorage.setItem('theme', newTheme);
-          updateButton(newTheme);
-        });
-      })();
-
       // Common function for hover effects
       function setupHoverEffect(id) {
         const element = document.getElementById(id);
