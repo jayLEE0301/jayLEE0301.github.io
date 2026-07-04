@@ -1282,6 +1282,25 @@ html {
     font-family: "Space Grotesk", "Lato", Verdana, Helvetica, sans-serif;
 }
 
+/* Awards / Services / Teaching → quiet hairline rows (News stays cards),
+   so the lower sections read as designed rather than an afterthought. */
+.awards-list li,
+.services-list li {
+    margin-bottom: 0;
+    padding: 0.7rem 0 0.7rem 1.3rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: padding-left 0.2s ease, color 0.2s ease;
+}
+.awards-list li:last-child,
+.services-list li:last-child {
+    border-bottom: none;
+}
+.awards-list li:hover,
+.services-list li:hover {
+    padding-left: 1.6rem;
+    color: var(--accent-strong);
+}
+
 @media screen and (max-width: 480px) {
     .profile-photo {
         width: 150px;
