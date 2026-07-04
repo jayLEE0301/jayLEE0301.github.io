@@ -404,6 +404,21 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.name-ko {
+    text-align: center;
+    margin: -0.75rem 0 1.5rem;
+    font-family: "Lato", Verdana, Helvetica, sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    font-weight: 400;
+    letter-spacing: 0.55em;
+    text-indent: 0.55em; /* offset trailing letter-spacing so glyphs stay centered */
+    color: var(--primary-color);
+    background: var(--heading-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .header-image {
     flex-shrink: 0;
     padding-right: 20px;
