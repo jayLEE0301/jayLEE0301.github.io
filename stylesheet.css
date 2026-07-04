@@ -1274,6 +1274,14 @@ html {
     background-size: 100% 1.5px;
 }
 
+/* Display face: Space Grotesk for name + section headings, Lato stays
+   for body. Delete this block to revert to all-Lato. */
+.header .name,
+.section h2,
+.column-subtitle {
+    font-family: "Space Grotesk", "Lato", Verdana, Helvetica, sans-serif;
+}
+
 @media screen and (max-width: 480px) {
     .profile-photo {
         width: 150px;
