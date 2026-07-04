@@ -291,21 +291,6 @@ h1 {
     --border-color: #334155;
 }
 
-/* Typing cursor effect for name */
-.name::after {
-    content: '|';
-    animation: blink 0.8s infinite;
-}
-
-.name.typing-done::after {
-    display: none;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
 /* Theme toggle button */
 .theme-toggle {
     position: fixed;

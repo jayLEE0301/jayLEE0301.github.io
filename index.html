@@ -872,30 +872,6 @@
         ];
         hoverElements.forEach(setupHoverEffect);
       });
-
-      // Typing effect for name
-      (function() {
-        const nameElement = document.querySelector('.name');
-        const fullName = 'Seungjae (Jay) Lee';
-        nameElement.textContent = '';
-        nameElement.style.minHeight = '1.2em';
-
-        let i = 0;
-        function type() {
-          if (i < fullName.length) {
-            nameElement.textContent += fullName.charAt(i);
-            i++;
-            setTimeout(type, 100);
-          } else {
-            // Hide cursor after typing is done
-            setTimeout(() => nameElement.classList.add('typing-done'), 1000);
-          }
-        }
-
-        // Start typing after a short delay
-        setTimeout(type, 500);
-      })();
-
     </script>
   </body>
 </html>
