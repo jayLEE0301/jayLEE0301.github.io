@@ -563,25 +563,23 @@ body {
 
 .research-item .tag.sticker,
 .project-item .tag.sticker {
-    position: absolute;
-    left: 10px;
-    top: -12px;
-    padding: 6px 12px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px var(--card-shadow);
-    background-color: var(--tag-bg);
-    border: 1px solid var(--accent-color);
-    color: #1a1a1a;
-    font-size: 14px;
-    font-weight: 600;
-    font-style: italic;
-    letter-spacing: 0.3px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: inline-block;
+    margin: 3px 0 9px;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: var(--accent-color);
+    font-size: 15px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.2px;
+    transition: color 0.3s ease;
 }
 
 [data-theme="dark"] .research-item .tag.sticker,
 [data-theme="dark"] .project-item .tag.sticker {
-    color: var(--text-color);
+    color: var(--accent-color);
 }
 
 /* Hover Effects */
@@ -1247,17 +1245,17 @@ html {
     transform: translateY(-5px);
 }
 
-/* Venue sticker → filled gradient pill that reads in both themes */
+/* Venue label → plain accent-colored text between title and authors */
 .research-item .tag.sticker,
 .project-item .tag.sticker,
 [data-theme="dark"] .research-item .tag.sticker,
 [data-theme="dark"] .project-item .tag.sticker {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-strong));
-    color: #ffffff;
+    background: none;
+    color: var(--accent-color);
     border: none;
     font-style: normal;
     font-weight: 700;
-    box-shadow: 0 4px 12px var(--card-hover-shadow);
+    box-shadow: none;
 }
 
 /* Animated underline for inline links inside body copy & research rows */
