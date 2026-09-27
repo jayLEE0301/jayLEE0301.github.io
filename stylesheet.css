@@ -245,18 +245,13 @@ h1 {
     --heading-gradient: linear-gradient(120deg, #134e4a, #0d9488, #14b8a6);
     --background-color: #f0fdfa;
     --surface-color: #ffffff;
-    --section-bg: #ffffff;
     --header-bg: linear-gradient(135deg, rgba(13, 148, 136, 0.03), rgba(201, 162, 39, 0.02)),
         linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
-    --card-bg: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
-    --card-border: #ccfbf1;
-    --card-hover-border: #99f6e4;
     --card-shadow: rgba(13, 148, 136, 0.05);
     --card-hover-shadow: rgba(13, 148, 136, 0.1);
     --tag-bg: #f0fdfa;
     --tag-border: #ccfbf1;
     --tag-color: #115e59;
-    --sticker-bg: #0f766e;
     --award-ink: #8a6d1f;
     --text-color: #1a1a1a;
     --text-muted: #555555;
@@ -275,18 +270,13 @@ h1 {
     --heading-gradient: linear-gradient(120deg, #14b8a6, #2dd4bf, #5eead4);
     --background-color: #0f172a;
     --surface-color: #1e293b;
-    --section-bg: #1e293b;
     --header-bg: linear-gradient(135deg, rgba(45, 212, 191, 0.05), rgba(251, 191, 36, 0.02)),
         linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    --card-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    --card-border: #334155;
-    --card-hover-border: #475569;
     --card-shadow: rgba(0, 0, 0, 0.2);
     --card-hover-shadow: rgba(0, 0, 0, 0.3);
     --tag-bg: #1e293b;
     --tag-border: #334155;
     --tag-color: #5eead4;
-    --sticker-bg: #0f766e;
     --award-ink: #fbbf24;
     --text-color: #e2e8f0;
     --text-muted: #94a3b8;
@@ -339,7 +329,7 @@ h1 {
 }
 
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Lato", Verdana, Helvetica, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     margin: 0;
@@ -418,14 +408,10 @@ body {
 
 /* Section Styles */
 .section {
-    padding: var(--section-spacing) 0;
+    padding: 2.75rem 0 0.5rem;
     border-top: 1px solid var(--border-color);
-    background-color: var(--section-bg);
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    box-shadow: 0 2px 4px var(--card-shadow);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 0;
+    transition: border-color 0.3s ease;
 }
 
 .section h2 {
@@ -500,15 +486,10 @@ body {
 .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-}
-
-.section > .research-item {
-    margin-bottom: 2rem;
 }
 
 .section > .research-item:last-of-type {
-    margin-bottom: 2rem;
+    border-bottom: none;
 }
 
 .research-item,
@@ -517,23 +498,9 @@ body {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 6px 16px var(--card-shadow);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.research-item:hover,
-.project-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px var(--card-hover-shadow);
-    border-color: var(--card-hover-border);
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
 }
 
 .research-image,
@@ -1150,9 +1117,8 @@ html {
     border: none;
     color: var(--text-muted);
     font-weight: 600;
-    font-size: 0.82rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0;
     transition: color 0.2s ease;
 }
 /* hairline divider before every item except the first */
@@ -1194,38 +1160,6 @@ html {
     left: 0;
 }
 
-/* News list → subtle cards with an accent slide on hover */
-.news-list li {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 0.7rem 1rem 0.7rem 1.6rem;
-    margin-bottom: 0.6rem;
-    transition: border-color 0.25s ease, transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-.news-list li:hover {
-    transform: translateX(4px);
-    border-color: var(--card-hover-border);
-    box-shadow: 0 4px 12px var(--card-shadow);
-}
-.news-list li:before {
-    left: 0.65rem;
-    color: var(--accent-color);
-    font-size: 1.2em;
-    line-height: 1.35;
-}
-
-/* Research / project cards: rounder, livelier lift */
-.research-item,
-.project-item {
-    border-radius: 18px;
-}
-.research-item:hover,
-.project-item:hover {
-    transform: translateY(-5px);
-}
-
 /* Animated underline for inline links inside body copy & research rows */
 .research-content a:not(.papertitle):not(:has(.papertitle)),
 .header-text p a {
@@ -1248,8 +1182,8 @@ html {
     font-family: "Space Grotesk", "Lato", Verdana, Helvetica, sans-serif;
 }
 
-/* Awards / Services / Teaching → quiet hairline rows (News stays cards),
-   so the lower sections read as designed rather than an afterthought. */
+/* News / Awards / Services / Teaching → quiet hairline rows. */
+.news-list li,
 .awards-list li,
 .services-list li {
     margin-bottom: 0;
@@ -1257,10 +1191,12 @@ html {
     border-bottom: 1px solid var(--border-color);
     transition: padding-left 0.2s ease, color 0.2s ease;
 }
+.news-list li:last-child,
 .awards-list li:last-child,
 .services-list li:last-child {
     border-bottom: none;
 }
+.news-list li:hover,
 .awards-list li:hover,
 .services-list li:hover {
     padding-left: 1.6rem;
@@ -1361,4 +1297,17 @@ html {
     .paper-media {
         width: 220px;
     }
+}
+
+/* ── Measure ────────────────────────────────────────────────────────────
+   Removing the cards also removed the padding that used to cap line
+   length; these keep body copy near 75 characters. em-based so they
+   track whatever font-size the element ends up with. */
+.research-content,
+.project-content {
+    max-width: 37em;
+}
+
+.section > p {
+    max-width: 38em;
 }
