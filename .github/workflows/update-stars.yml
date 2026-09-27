@@ -1,0 +1,39 @@
+name: Update star counts
+
+on:
+  schedule:
+    # 06:17 UTC daily. Off the hour, because scheduled jobs on the hour
+    # queue behind everyone else's and get delayed.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-stars
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh star counts
+        env:
+          # Authenticated: 5,000 requests/hour instead of 60.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_stars.py
+
+      - name: Commit if the numbers moved
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "Star counts unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update GitHub star counts"
+          git push
