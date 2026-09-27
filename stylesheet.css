@@ -257,6 +257,7 @@ h1 {
     --tag-border: #ccfbf1;
     --tag-color: #115e59;
     --sticker-bg: #0f766e;
+    --award-ink: #8a6d1f;
     --text-color: #1a1a1a;
     --text-muted: #555555;
     --border-color: #e0f2f1;
@@ -286,6 +287,7 @@ h1 {
     --tag-border: #334155;
     --tag-color: #5eead4;
     --sticker-bg: #0f766e;
+    --award-ink: #fbbf24;
     --text-color: #e2e8f0;
     --text-muted: #94a3b8;
     --border-color: #334155;
@@ -559,27 +561,6 @@ body {
 .research-content strong {
     font-size: 15.5px;
     color: var(--text-color);
-}
-
-.research-item .tag.sticker,
-.project-item .tag.sticker {
-    display: inline-block;
-    margin: 3px 0 9px;
-    padding: 0;
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: var(--accent-color);
-    font-size: 15px;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: 0.2px;
-    transition: color 0.3s ease;
-}
-
-[data-theme="dark"] .research-item .tag.sticker,
-[data-theme="dark"] .project-item .tag.sticker {
-    color: var(--accent-color);
 }
 
 /* Hover Effects */
@@ -1245,19 +1226,6 @@ html {
     transform: translateY(-5px);
 }
 
-/* Venue label → plain accent-colored text between title and authors */
-.research-item .tag.sticker,
-.project-item .tag.sticker,
-[data-theme="dark"] .research-item .tag.sticker,
-[data-theme="dark"] .project-item .tag.sticker {
-    background: none;
-    color: var(--accent-color);
-    border: none;
-    font-style: normal;
-    font-weight: 700;
-    box-shadow: none;
-}
-
 /* Animated underline for inline links inside body copy & research rows */
 .research-content a:not(.papertitle):not(:has(.papertitle)),
 .header-text p a {
@@ -1305,5 +1273,92 @@ html {
     }
     .section h2 {
         font-size: 1.45rem;
+    }
+}
+
+/* ── Venue plate ────────────────────────────────────────────────────────
+   The venue leads the media column, so every row starts at the same
+   x-position and scrolling the list reads as a vertical index of venues.
+   Prestige here comes from that repetition, not from emphasis — hence no
+   chip, no fill, no caps. It is set in the display face (Space Grotesk)
+   rather than Lato: a change of voice, not a badge, is what makes it
+   register beside a title of nearly the same size and colour. */
+.paper-media {
+    flex-shrink: 0;
+    width: 320px;
+}
+
+.venue {
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
+}
+
+.venue-name {
+    font-family: "Space Grotesk", "Lato", Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--accent-strong);
+    transition: color 0.3s ease;
+}
+
+.venue-year {
+    margin-left: 0.38em;
+    font-family: "Space Grotesk", "Lato", Verdana, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+/* Preprints stay grey, so the teal column reads as peer-reviewed work. */
+.venue--preprint .venue-name {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.venue-award {
+    margin-left: 0.55em;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    color: var(--award-ink);
+    transition: color 0.3s ease;
+}
+
+/* Workshop acceptances are secondary: plain text, never louder than the
+   venue plate they belong to. */
+.research-content .tag.tag-strong {
+    display: block;
+    margin: 0.2rem 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--text-muted);
+}
+
+@media screen and (max-width: 768px) {
+    .paper-media {
+        width: 260px;
+    }
+    .venue {
+        margin-bottom: 0.55rem;
+    }
+    .venue-name {
+        font-size: 15px;
+    }
+    .venue-year {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .paper-media {
+        width: 220px;
     }
 }
