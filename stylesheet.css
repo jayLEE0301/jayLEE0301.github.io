@@ -490,6 +490,194 @@ a:hover .papertitle {
     color: var(--ink-2);
 }
 
+/* ── Research head ──────────────────────────────────────────────────── */
+.section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1.5rem;
+    margin: 0 0 2.25rem;
+}
+
+.section-head h2 {
+    margin: 0;
+}
+
+/* A one-line intro reads as part of the heading, not a new block. */
+.section-head + p {
+    margin-top: -0.9rem;
+}
+
+.star-legend {
+    margin: 0;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink-2);
+}
+
+.star-legend .star-icon {
+    margin: 0 0.2rem 0 0;
+}
+
+/* ── Research areas ─────────────────────────────────────────────────────
+   The same papers, grouped by question instead of by year, and an index
+   to the rail below: every name links down to its row. Each figure is a
+   single trace acting out its area, drawn in the rail's own line. The
+   areas are separate lines of work, not stages of one pipeline, so each
+   trace starts and ends inside its own figure. No frames; the line is
+   the illustration. Violet is the trace, grey is what it passes through. */
+.research-areas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    column-gap: 1.25rem;
+    row-gap: 0;
+    margin: 0 0 3.75rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* Subgrid lines the titles and lists up across columns whatever their
+   length; without it each column simply stacks. */
+.area {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+}
+
+.area-figure {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 1.05rem;
+}
+
+.area-figure svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    fill: none;
+    stroke: var(--ink-2);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Strokes stay 1.6px at any size, rather than thickening as the column
+   widens or thinning in the narrow rows on a phone. */
+.area-figure svg * {
+    vector-effect: non-scaling-stroke;
+}
+
+.area-figure .t {
+    stroke: var(--flow);
+}
+
+.area-figure .fill {
+    fill: var(--flow);
+    stroke: none;
+}
+
+.area-figure .paper {
+    fill: var(--paper);
+}
+
+.area-figure .soft {
+    opacity: 0.45;
+}
+
+.area-figure .faint {
+    opacity: 0.22;
+}
+
+.area-figure .dotted {
+    stroke-width: 2.4;
+    stroke-dasharray: 0.1 4.4;
+}
+
+.area-figure .dashed {
+    stroke-dasharray: 3 4;
+}
+
+.area-title {
+    margin: 0 0 0.6rem;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.06rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.004em;
+    color: var(--ink);
+}
+
+.area-papers {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.94rem;
+    line-height: 1.38;
+}
+
+.area-papers li {
+    padding: 0.24rem 0;
+}
+
+.area-papers a {
+    color: var(--ink);
+}
+
+.area-papers a:hover,
+.area-papers a:focus-visible {
+    color: var(--flow);
+}
+
+.area-papers .star-icon {
+    margin-left: 0.22rem;
+}
+
+/* Venue on its own line in the columns, so a long name and a short one
+   look the same instead of some venues wrapping and others not. */
+.area-venue {
+    display: block;
+    margin-top: 0.06rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--ink-2);
+}
+
+.publications-label {
+    margin-bottom: 0.4rem;
+}
+
+/* Arriving from an area link: land with some air above the row, and
+   wash it briefly so the eye finds it. */
+.section--trace .research-item {
+    scroll-margin-top: 1.5rem;
+}
+
+.section--trace .research-item:target {
+    animation: trace-target 2.4s ease-out;
+}
+
+@keyframes trace-target {
+    0%, 35% {
+        background: color-mix(in srgb, var(--flow) 9%, transparent);
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section--trace .research-item:target {
+        animation: none;
+        background: color-mix(in srgb, var(--flow) 7%, transparent);
+    }
+}
+
 /* ── Theme toggle ───────────────────────────────────────────────────── */
 .theme-toggle {
     position: fixed;
@@ -518,9 +706,11 @@ a:hover .papertitle {
 
 /* ── Responsive ─────────────────────────────────────────────────────── */
 @media screen and (max-width: 860px) {
+    /* The rail moves in only as far as the year label allows: any
+       closer and the node sits on top of the year. */
     :root {
-        --gutter: 3.6rem;
-        --rail: 1.5rem;
+        --gutter: 4rem;
+        --rail: 2.9rem;
         --media: 260px;
     }
 
@@ -537,6 +727,38 @@ a:hover .papertitle {
     .edu-exp-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+
+    /* Four columns get too narrow; each area becomes a row instead,
+       figure on the left. */
+    .research-areas {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        row-gap: 1.9rem;
+    }
+
+    .area {
+        grid-row: auto;
+        grid-template-columns: 168px minmax(0, 1fr);
+        grid-template-rows: auto 1fr;
+        column-gap: 1.5rem;
+    }
+
+    .area-figure {
+        grid-row: 1 / span 2;
+        align-self: start;
+        margin-bottom: 0;
+    }
+
+    /* A row is wide enough that no venue wraps, so it rides on the
+       name's line again. */
+    .area-papers li {
+        padding: 0.17rem 0;
+    }
+
+    .area-venue {
+        display: inline;
+        margin: 0 0 0 0.4em;
     }
 }
 
@@ -592,6 +814,37 @@ a:hover .papertitle {
 
     .research-content {
         max-width: none;
+    }
+
+    /* On a phone the areas shrink to names only, run together: the
+       venues are a scroll away on the rail, and four stacked lists would
+       push the first paper a full screen further down. */
+    .area {
+        grid-template-columns: 88px minmax(0, 1fr);
+        column-gap: 1rem;
+    }
+
+    .research-areas {
+        row-gap: 1.6rem;
+    }
+
+    .area-title {
+        margin-bottom: 0.3rem;
+    }
+
+    .area-papers li {
+        display: inline;
+        padding: 0;
+    }
+
+    /* Slashes, not commas: some titles carry commas of their own. */
+    .area-papers li:not(:last-child)::after {
+        content: " / ";
+        color: var(--ink-2);
+    }
+
+    .area-venue {
+        display: none;
     }
 }
 

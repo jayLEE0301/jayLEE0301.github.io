@@ -180,18 +180,163 @@
 
       <!-- Research Section -->
       <section class="section section--trace">
-        <h2>Research</h2>
-        <p>
-          My research interest is understanding the interaction between agents and environments,
-          and devising data-efficient decision-making (or robot learning) algorithms. Selected publications are marked with ★ below.
-        </p>
-       
-        
-<div class="research-item">
+        <header class="section-head">
+          <h2>Research</h2>
+          <p class="star-legend"><span class="star-icon" aria-hidden="true">★</span> Projects I led or co-led</p>
+        </header>
+
+        <p>My research aims to scale robot learning beyond expensive robot data: drawing on human videos and vision-language models, and making perception and action generation more efficient.</p>
+
+        <!-- Research areas: an index into the timeline below. Each figure is
+             a single trace acting out its area; the areas are separate
+             lines of work, so the figures stand apart rather than joining
+             up. Areas run newest to oldest, left to right, and so do the
+             papers in each list, top to bottom. Each paper links to its row
+             on the rail by id. A <ul>, not a <div>, so the rail's
+             :first-of-type still lands on the first paper. -->
+        <ul class="research-areas">
+          <li class="area">
+            <div class="area-figure" aria-hidden="true">
+              <!-- a trace seen in a video frame, copied outside it by a gripper -->
+              <svg viewBox="0 0 160 100">
+                <rect x="8" y="22" width="62" height="56" rx="4"/>
+                <g class="fill soft">
+                  <circle cx="17" cy="28" r="1.3"/><circle cx="28" cy="28" r="1.3"/><circle cx="39" cy="28" r="1.3"/><circle cx="50" cy="28" r="1.3"/><circle cx="61" cy="28" r="1.3"/>
+                  <circle cx="17" cy="72" r="1.3"/><circle cx="28" cy="72" r="1.3"/><circle cx="39" cy="72" r="1.3"/><circle cx="50" cy="72" r="1.3"/><circle cx="61" cy="72" r="1.3"/>
+                </g>
+                <path class="t dotted" d="M14 50 C22 32, 32 32, 39 50 S56 68, 64 50"/>
+                <path class="t" d="M64 50 H84 C92 32, 102 32, 109 50 S126 68, 134 50 H145"/>
+                <path d="M158 50 H152 M152 41 V59 M152 41 H141 V44.5 M152 59 H141 V55.5"/>
+                <circle class="fill" cx="14" cy="50" r="2.6"/>
+                <circle class="fill" cx="145" cy="50" r="2.4"/>
+              </svg>
+            </div>
+            <h3 class="area-title">Learning from Human Videos</h3>
+            <ul class="area-papers">
+              <li><a href="#paper-dex-one2many">Dex-One2Many</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">Preprint &rsquo;26</span></li>
+              <li><a href="#paper-humanego">HumanEgo</a><span class="area-venue">Preprint &rsquo;26</span></li>
+              <li><a href="#paper-mu0">&mu;<sub>0</sub></a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">CoRL &rsquo;26</span></li>
+              <li><a href="#paper-tracegen">TraceGen</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">CVPR &rsquo;26</span></li>
+            </ul>
+          </li>
+
+          <li class="area">
+            <div class="area-figure" aria-hidden="true">
+              <!-- a model that sees and speaks, laying waypoints on the trace -->
+              <svg viewBox="0 0 160 100">
+                <g transform="translate(8 0)">
+                <path d="M22 10 H58 A8 8 0 0 1 66 18 V32 A8 8 0 0 1 58 40 H40 L33 47 V40 H22 A8 8 0 0 1 14 32 V18 A8 8 0 0 1 22 10 Z"/>
+                <path d="M28 25 Q40 16 52 25 Q40 34 28 25 Z"/>
+                <circle class="fill" cx="40" cy="25" r="3.6"/>
+                <path class="t dashed" d="M33 53 C46 53, 50 70, 64 70 C78 70, 82 34, 98 34 C114 34, 116 64, 130 64"/>
+                <circle class="paper" cx="33" cy="53" r="3"/>
+                <circle class="t paper" cx="64" cy="70" r="3.4"/>
+                <circle class="t paper" cx="98" cy="34" r="3.4"/>
+                <circle class="fill" cx="130" cy="64" r="3.6"/>
+                </g>
+              </svg>
+            </div>
+            <h3 class="area-title">VLMs for Embodied Agents</h3>
+            <ul class="area-papers">
+              <li><a href="#paper-flybycode">Fly-by-Code</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">Preprint &rsquo;26</span></li>
+              <li><a href="#paper-sequential-eqa">Beyond Episodic Evaluation</a><span class="area-venue">IROS &rsquo;26</span></li>
+              <li><a href="#paper-momagraph">MomaGraph</a><span class="area-venue">ICLR &rsquo;26</span></li>
+              <li><a href="#paper-ive">Imagine, Verify, Execute</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">CoRL &rsquo;25</span></li>
+            </ul>
+          </li>
+
+          <li class="area">
+            <div class="area-figure" aria-hidden="true">
+              <!-- noise settling onto the trace -->
+              <svg viewBox="0 0 160 100">
+                <path class="t faint" d="M12 43.4 L15 42.2 L20 40.1 L25 38.4 L30 37.1 L35 36.3 L40 36 L45 36.3 L50 37.1 L55 38.4 L60 40.1 L65 42.2 L70 44.6 L75 47.3 L80 50 L85 52.7 L90 55.4"/>
+                <g class="fill">
+                  <circle cx="17.9" cy="42" r="1.6" opacity="0.35"/>
+                  <circle cx="18.1" cy="47.5" r="1.6" opacity="0.4"/>
+                  <circle cx="20.6" cy="33.1" r="1.7" opacity="0.45"/>
+                  <circle cx="31.2" cy="48.3" r="1.8" opacity="0.5"/>
+                  <circle cx="32.7" cy="27.9" r="1.8" opacity="0.55"/>
+                  <circle cx="39.2" cy="43" r="1.9" opacity="0.6"/>
+                  <circle cx="49.1" cy="29.3" r="1.9" opacity="0.65"/>
+                  <circle cx="56.1" cy="44.8" r="2" opacity="0.7"/>
+                  <circle cx="60.5" cy="37.4" r="2.1" opacity="0.75"/>
+                  <circle cx="65.2" cy="40.8" r="2.1" opacity="0.8"/>
+                  <circle cx="72" cy="45.4" r="2.2" opacity="0.85"/>
+                  <circle cx="77.7" cy="48.6" r="2.3" opacity="0.9"/>
+                  <circle cx="83.9" cy="52.4" r="2.3" opacity="0.95"/>
+                  <circle cx="90" cy="55.4" r="2.4"/>
+                </g>
+                <path class="t" d="M90 55.4 L95 57.8 L100 59.9 L105 61.6 L110 62.9 L115 63.7 L120 64 L125 63.7 L130 62.9 L135 61.6 L140 59.9 L144 58.3 L146 57.3 M140 56.8 L146 57.3 L142.6 62.2"/>
+              </svg>
+            </div>
+            <h3 class="area-title">Efficient Action Generation</h3>
+            <ul class="area-papers">
+              <li><a href="#paper-tapestry">TAPESTRY</a><span class="area-venue">CoRL &rsquo;26</span></li>
+              <li><a href="#paper-dasip">DASIP</a><span class="area-venue">NeurIPS &rsquo;25</span></li>
+              <li><a href="#paper-rum">Robot Utility Models</a><span class="area-venue">ICRA &rsquo;25</span></li>
+              <li><a href="#paper-vqbet">VQ-BeT</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">ICML &rsquo;24</span></li>
+            </ul>
+          </li>
+
+          <li class="area">
+            <div class="area-figure" aria-hidden="true">
+              <!-- the trace splits through sight and touch, then rejoins as one representation -->
+              <svg viewBox="0 0 160 100">
+                <g transform="translate(-14 0)">
+                <path class="t" d="M66 26 C80 26, 82 50, 94 50 M66 74 C80 74, 82 50, 94 50 H152"/>
+                <path d="M40 26 Q53 16 66 26 Q53 36 40 26 Z"/>
+                <circle class="fill" cx="53" cy="26" r="3.6"/>
+                <ellipse cx="53" cy="74" rx="13" ry="8"/>
+                <ellipse class="soft" cx="53" cy="74" rx="8" ry="4.8"/>
+                <ellipse class="fill" cx="53" cy="74" rx="3.4" ry="2"/>
+                <rect class="fill" x="100" y="45" width="10" height="10" rx="1.5" opacity="0.9"/>
+                <rect class="t paper" x="114" y="45" width="10" height="10" rx="1.5"/>
+                <rect class="fill" x="128" y="45" width="10" height="10" rx="1.5" opacity="0.5"/>
+                <rect class="fill" x="142" y="45" width="10" height="10" rx="1.5"/>
+                </g>
+              </svg>
+            </div>
+            <h3 class="area-title">Visual &amp; Tactile Representations</h3>
+            <ul class="area-papers">
+              <li><a href="#paper-what-to-attend">What to Attend, What to Keep</a><span class="area-venue">Preprint &rsquo;26</span></li>
+              <li><a href="#paper-dynaflip">DynaFLIP</a><span class="area-venue">NeurIPS &rsquo;26</span></li>
+              <li><a href="#paper-snerl">SNeRL</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">ICML &rsquo;23</span></li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3 class="column-subtitle publications-label">Publications</h3>
+
+        <div class="research-item" id="paper-flybycode">
           <span class="trace-year">2026</span>
           <div class="paper-media">
             <p class="venue venue--preprint">
-              <span class="venue-name">arXiv</span><span class="venue-year">2026</span>
+              <span class="venue-name">Preprint</span><span class="venue-year">2026</span>
+            </p>
+            <div class="one">
+              <video width="160" height="160" muted autoplay loop poster="images/flybycode_image.jpg" style="object-fit: cover;">
+                <source src="images/flybycode_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div class="research-content">
+            <a href="https://fly-by-code.github.io/">
+              <span class="papertitle">Fly-by-Code: Embodied Coding Agents for Aerial Manipulation with Active Visual and Physical Feedback</span>
+              <span class="star-icon" aria-hidden="true">★</span>
+            </a>
+            <br>
+            Jaewoo Lee*, Jeongyeon Seo*, Sihyun Cho*, Gyeongrak Choe, Yutong Wang, Bavin Saravanan, Jia-Bin Huang, Furong Huang, Sebastian Scherer, Guanya Shi, H. Jin Kim, <strong>Seungjae Lee</strong>&dagger;, Dongjae Lee&dagger; (*equal contribution, &dagger;project leads)
+            <br>
+            <a href="https://fly-by-code.github.io/">project website</a>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="research-item" id="paper-dex-one2many">
+          <div class="paper-media">
+            <p class="venue venue--preprint">
+              <span class="venue-name">Preprint</span><span class="venue-year">2026</span>
             </p>
             <div class="one">
               <video width="160" height="160" muted autoplay loop poster="images/dex_onetomany_image.png" style="object-fit: cover;">
@@ -203,6 +348,7 @@
           <div class="research-content">
             <a href="https://dex-one2many.github.io/">
               <span class="papertitle">Dex-One2Many: Learning Dexterous Manipulation from a Single Human Demonstration</span>
+              <span class="star-icon" aria-hidden="true">★</span>
             </a>
             <br>
             Jusuk Lee*, Sungha Kim*, Yeonsoo Park*, Jonguk Cheon, Yoonkyo Jung, Yongjun You, H. Jin Kim, Jia-Bin Huang, Furong Huang, Youngseok Jang&dagger;, <strong>Seungjae Lee</strong>&dagger; (*equal contribution, &dagger;equal advising)
@@ -213,10 +359,10 @@
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="paper-what-to-attend">
           <div class="paper-media">
             <p class="venue venue--preprint">
-              <span class="venue-name">arXiv</span><span class="venue-year">2026</span>
+              <span class="venue-name">Preprint</span><span class="venue-year">2026</span>
             </p>
             <div class="one">
               <video width="160" height="160" muted autoplay loop style="object-fit: cover;">
@@ -240,10 +386,10 @@
           </div>
         </div>
         
-        <div class="research-item">
+        <div class="research-item" id="paper-humanego">
           <div class="paper-media">
             <p class="venue venue--preprint">
-              <span class="venue-name">arXiv</span><span class="venue-year">2026</span>
+              <span class="venue-name">Preprint</span><span class="venue-year">2026</span>
             </p>
             <div class="one">
               <video width="160" height="160" muted autoplay loop style="object-fit: cover;">
@@ -273,7 +419,7 @@
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="paper-dynaflip">
           <div class="paper-media">
             <p class="venue">
               <span class="venue-name">NeurIPS</span><span class="venue-year">2026</span>
@@ -301,7 +447,7 @@
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="paper-mu0">
           <div class="paper-media">
             <p class="venue">
               <span class="venue-name">CoRL</span><span class="venue-year">2026</span>
@@ -329,7 +475,7 @@
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="paper-tapestry">
           <div class="paper-media">
             <p class="venue">
               <span class="venue-name">CoRL</span><span class="venue-year">2026</span>
@@ -356,7 +502,7 @@
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="paper-sequential-eqa">
           <div class="paper-media">
             <p class="venue">
               <span class="venue-name">IROS</span><span class="venue-year">2026</span>
@@ -370,14 +516,14 @@
               <span class="papertitle">Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering</span>
             </a>
             <br>
-            Zikui Cai*, Kaushal Janga*, Tan Dat Dao*, <strong>Seungjae Lee*</strong>, Shivin Dass, Mingyo Seo, Kaiyu Yue, Mintong Kang, Nandhu Pillai, Monte Hoover, Aadi Palnitkar, Ruchit Rawal, Ruijie Zheng, Bo Li, Yuke Zhu, Roberto Mart&iacute;n-Mart&iacute;n, Tom Goldstein, Furong Huang
+            Zikui Cai*, Kaushal Janga*, Tan Dat Dao*, <strong>Seungjae Lee*</strong>, Shivin Dass, Mingyo Seo, Kaiyu Yue, Mintong Kang, Nandhu Pillai, Monte Hoover, Aadi Palnitkar, Ruchit Rawal, Ruijie Zheng, Bo Li, Yuke Zhu, Roberto Mart&iacute;n-Mart&iacute;n, Tom Goldstein, Furong Huang (*equal contribution)
             <br>
             <a href="https://arxiv.org/html/2607.21571v1">arXiv</a>
             <p></p>
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="paper-tracegen">
           <div class="paper-media">
             <p class="venue">
               <span class="venue-name">CVPR</span><span class="venue-year">2026</span>
@@ -430,7 +576,7 @@
         </div> -->
 
 
-        <div class="research-item">
+        <div class="research-item" id="paper-momagraph">
           <div class="paper-media">
             <p class="venue">
               <span class="venue-name">ICLR</span><span class="venue-year">2026</span>
@@ -460,7 +606,7 @@
         </div>
 
 
-        <div class="research-item">
+        <div class="research-item" id="paper-dasip">
           <span class="trace-year">2025</span>
           <div class="research-image">
             <div class="paper-media">
@@ -489,7 +635,7 @@
         </div>
 
         <div class="research-list">
-          <div class="research-item">
+          <div class="research-item" id="paper-ive">
             <div class="research-image">
               <div class="paper-media">
                 <p class="venue">
@@ -554,7 +700,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-rum">
             <div class="paper-media">
               <p class="venue">
                 <span class="venue-name">ICRA</span><span class="venue-year">2025</span>
@@ -585,7 +731,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-vqbet">
           <span class="trace-year">2024</span>
             <div class="paper-media">
               <p class="venue">
@@ -621,7 +767,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-cqm">
           <span class="trace-year">2023</span>
             <div class="paper-media">
               <p class="venue">
@@ -637,6 +783,7 @@
             <div class="research-content">
               <a href="https://arxiv.org/abs/2310.17330">
                 <span class="papertitle">CQM: Curriculum Reinforcement Learning with a Quantized World Model</span>
+                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               <strong>Seungjae Lee</strong>, Daesol Cho, Jonghae Park, H Jin Kim
@@ -649,7 +796,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-dnc">
             <div class="research-image">
               <div class="paper-media">
                 <p class="venue">
@@ -675,7 +822,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-snerl">
             <div class="paper-media">
               <p class="venue">
                 <span class="venue-name">ICML</span><span class="venue-year">2023</span>
@@ -704,7 +851,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-outpace">
             <div class="research-image">
               <div class="paper-media">
                 <p class="venue">
@@ -761,7 +908,7 @@
             </div>
           </div>
 
-          <div class="research-item">
+          <div class="research-item" id="paper-dhrl">
           <span class="trace-year">2022</span>
             <div class="research-image">
               <div class="paper-media">
