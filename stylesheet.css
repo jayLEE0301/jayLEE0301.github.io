@@ -600,6 +600,192 @@ a:hover .papertitle {
     stroke-dasharray: 3 4;
 }
 
+.area-figure .ripple {
+    opacity: 0;
+}
+
+/* Pointing at an area plays its figure once: the trace draws itself in
+   and the figure acts out its idea. The gripper closing and the noise
+   settling are transitions, so they undo themselves when the pointer
+   leaves; everything else is a one-shot animation. Real pointers and
+   keyboard focus only, and never under reduced motion. Lines draw by a
+   left-to-right clip, not by dash offset, which non-scaling strokes
+   would throw off. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .area-figure .grip,
+    .area-figure .settle {
+        transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .area-figure .blink,
+    .area-figure .pop,
+    .area-figure .ripple {
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+
+    .area-figure .pull {
+        transform-box: fill-box;
+        transform-origin: 0 0;
+    }
+
+    .area-figure .ring {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+    }
+
+    .area-figure .frontier {
+        transform-box: view-box;
+        transform-origin: 12px 50px;
+    }
+
+    .area-figure .wave {
+        transform-box: view-box;
+        transform-origin: 146px 29.5px;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .draw {
+        animation: area-draw 0.7s cubic-bezier(0.3, 0.6, 0.3, 1) var(--d, 0s) backwards;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .grip-top {
+        transform: translateY(3px);
+        transition-delay: 0.85s;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .grip-bottom {
+        transform: translateY(-3px);
+        transition-delay: 0.85s;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .settle {
+        transform: translateY(var(--dy));
+        opacity: 1;
+        transition-duration: 0.45s;
+        transition-delay: var(--d);
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .blink {
+        animation: area-blink 0.32s ease-in-out 0.05s;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .pop {
+        animation: area-pop 0.4s cubic-bezier(0.3, 1.6, 0.5, 1) var(--d, 0s) backwards;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .ripple {
+        animation: area-ripple 0.9s ease-out 0.1s;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .flash {
+        animation: area-flash 0.3s ease-out var(--d, 0s) backwards;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .pull {
+        animation: area-pull 0.6s ease-in 0.15s backwards, area-click 0.2s ease-out 0.8s;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .ring {
+        animation: area-ring 0.7s ease-in-out 0.85s;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .frontier {
+        animation: area-frontier 0.7s ease-out backwards;
+    }
+
+    .area:is(:hover, :focus-within) .area-figure .wave {
+        animation: area-wave 0.8s ease-in-out 0.95s;
+    }
+}
+
+@keyframes area-draw {
+    from {
+        clip-path: inset(-8px 100% -8px -8px);
+    }
+    to {
+        clip-path: inset(-8px);
+    }
+}
+
+@keyframes area-blink {
+    50% {
+        transform: scaleY(0.12);
+    }
+}
+
+@keyframes area-pop {
+    from {
+        transform: scale(0);
+    }
+}
+
+@keyframes area-ripple {
+    from {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.7);
+    }
+}
+
+@keyframes area-flash {
+    from {
+        opacity: 0.12;
+    }
+}
+
+@keyframes area-pull {
+    from {
+        opacity: 0;
+        transform: translate(-24px, 6px);
+    }
+    30% {
+        opacity: 1;
+    }
+}
+
+@keyframes area-click {
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes area-ring {
+    15% {
+        transform: rotate(12deg);
+    }
+    35% {
+        transform: rotate(-10deg);
+    }
+    55% {
+        transform: rotate(7deg);
+    }
+    75% {
+        transform: rotate(-4deg);
+    }
+}
+
+@keyframes area-frontier {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
+@keyframes area-wave {
+    25% {
+        transform: scaleX(0.75) skewY(8deg);
+    }
+    50% {
+        transform: skewY(-6deg);
+    }
+    75% {
+        transform: scaleX(0.85) skewY(4deg);
+    }
+}
+
 .area-title {
     margin: 0 0 0.6rem;
     font-family: "Newsreader", Georgia, serif;
@@ -653,7 +839,7 @@ a:hover .papertitle {
    titles, in the same serif, so they read as headings rather than as
    the small grey labels used inside Education. */
 .research-subhead {
-    margin: 0 0 1.1rem;
+    margin: 0 0 0.6rem;
     font-family: "Newsreader", Georgia, serif;
     font-variation-settings: "opsz" 24;
     font-size: 1.32rem;
@@ -705,7 +891,7 @@ a:hover .papertitle {
 }
 
 .areas-more .research-areas {
-    margin: 1.4rem 0 0;
+    margin: 0.9rem 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
