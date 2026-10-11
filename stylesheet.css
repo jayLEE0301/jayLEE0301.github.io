@@ -534,7 +534,7 @@ a:hover .papertitle {
     grid-template-rows: auto auto auto;
     column-gap: 1.25rem;
     row-gap: 0;
-    margin: 0 0 3.75rem;
+    margin: 0 0 2.25rem;
     padding: 0;
     list-style: none;
 }
@@ -648,8 +648,74 @@ a:hover .papertitle {
     color: var(--ink-2);
 }
 
+/* The Research section's own subheads: current areas, earlier areas,
+   publications. A step below the section title and above the area
+   titles, in the same serif, so they read as headings rather than as
+   the small grey labels used inside Education. */
+.research-subhead {
+    margin: 0 0 1.1rem;
+    font-family: "Newsreader", Georgia, serif;
+    font-variation-settings: "opsz" 24;
+    font-size: 1.32rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.008em;
+    color: var(--ink);
+}
+
+/* Earlier areas, folded away under a subhead set like the others but
+   clickable, and in the secondary ink since what it holds is. Inside, they use the same four-column grid, so the two
+   that are there line up under the first two current areas. */
+.areas-more {
+    margin: 0 0 3.5rem;
+}
+
+.areas-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    color: var(--ink-2);
+    list-style: none;
+    cursor: pointer;
+    transition: color 0.18s ease;
+}
+
+.areas-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.areas-toggle:hover {
+    color: var(--flow);
+}
+
+.areas-toggle svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s ease;
+}
+
+.areas-more[open] .areas-toggle svg {
+    transform: rotate(180deg);
+}
+
+.areas-more .research-areas {
+    margin: 1.4rem 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .areas-toggle svg {
+        transition: none;
+    }
+}
+
 .publications-label {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Arriving from an area link: land with some air above the row, and

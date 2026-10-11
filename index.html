@@ -187,13 +187,15 @@
 
         <p>My research aims to scale robot learning beyond expensive robot data: drawing on human videos and vision-language models, and making perception and action generation more efficient.</p>
 
-        <!-- Research areas: an index into the timeline below. Each figure is
+        <!-- Research areas: an index into the timeline below, current areas
+             first and earlier ones folded under "Other areas". Each figure is
              a single trace acting out its area; the areas are separate
              lines of work, so the figures stand apart rather than joining
              up. Areas run newest to oldest, left to right, and so do the
              papers in each list, top to bottom. Each paper links to its row
              on the rail by id. A <ul>, not a <div>, so the rail's
              :first-of-type still lands on the first paper. -->
+        <h3 class="research-subhead">Current research interests</h3>
         <ul class="research-areas">
           <li class="area">
             <div class="area-figure" aria-hidden="true">
@@ -239,7 +241,7 @@
             <h3 class="area-title">VLMs for Embodied Agents</h3>
             <ul class="area-papers">
               <li><a href="#paper-flybycode">Fly-by-Code</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">Preprint &rsquo;26</span></li>
-              <li><a href="#paper-sequential-eqa">Beyond Episodic Evaluation</a><span class="area-venue">IROS &rsquo;26</span></li>
+              <li><a href="#paper-sequential-eqa">Beyond Episodic Evaluation</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">IROS &rsquo;26</span></li>
               <li><a href="#paper-momagraph">MomaGraph</a><span class="area-venue">ICLR &rsquo;26</span></li>
               <li><a href="#paper-ive">Imagine, Verify, Execute</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">CoRL &rsquo;25</span></li>
             </ul>
@@ -305,7 +307,63 @@
           </li>
         </ul>
 
-        <h3 class="column-subtitle publications-label">Publications</h3>
+        <details class="areas-more">
+          <summary class="research-subhead areas-toggle">Other areas I still love<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 L6 8 L9.5 4.5"/></svg></summary>
+          <ul class="research-areas">
+            <li class="area">
+              <div class="area-figure" aria-hidden="true">
+                <!-- an agent's path in a browser, pulled off its target by an injected element -->
+                <svg viewBox="0 0 160 100">
+                  <rect x="14" y="14" width="132" height="72" rx="5"/>
+                  <path d="M14 26 H146"/>
+                  <g class="fill soft">
+                    <circle cx="22" cy="20" r="1.5"/><circle cx="28" cy="20" r="1.5"/><circle cx="34" cy="20" r="1.5"/>
+                  </g>
+                  <path class="soft" d="M26 38 H72 M26 46 H62 M26 54 H68"/>
+                  <rect x="98" y="66" width="36" height="11" rx="3"/>
+                  <path d="M114 34 L124 51 L104 51 Z M114 40 V45 M114 48.4 V48.6"/>
+                  <path class="t faint dashed" d="M28 72 C56 72, 78 71.5, 98 71.5"/>
+                  <path class="t" d="M28 72 C48 72, 66 54, 93 49"/>
+                  <circle class="fill" cx="28" cy="72" r="2.6"/>
+                  <path class="fill" d="M93 49 L93 60 L96 57.5 L98 62 L100 61 L98 56.5 L101.5 56.5 Z"/>
+                </svg>
+              </div>
+              <h3 class="area-title">Web AI Agent Security</h3>
+              <ul class="area-papers">
+                <li><a href="#paper-webai">Why Are Web AI Agents More Vulnerable?</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">ICLRw &rsquo;25</span></li>
+              </ul>
+            </li>
+
+            <li class="area">
+              <div class="area-figure" aria-hidden="true">
+                <!-- widening frontiers, then a path through the graph to the goal -->
+                <svg viewBox="0 0 160 100">
+                  <path class="soft" d="M12 32 A18 18 0 0 1 12 68 M12 16 A34 34 0 0 1 12 84" stroke-dasharray="2.5 4"/>
+                  <path class="soft" d="M44 38 L62 18 L98 34 M70 56 L88 80 L118 74 L124 44"/>
+                  <g class="fill soft">
+                    <circle cx="62" cy="18" r="2.4"/><circle cx="88" cy="80" r="2.4"/><circle cx="118" cy="74" r="2.4"/>
+                  </g>
+                  <path class="t" d="M12 50 L44 38 L70 56 L98 34 L124 44 L146 50"/>
+                  <g class="fill">
+                    <circle cx="44" cy="38" r="2.6"/><circle cx="70" cy="56" r="2.6"/><circle cx="98" cy="34" r="2.6"/><circle cx="124" cy="44" r="2.6"/>
+                  </g>
+                  <circle class="paper" cx="12" cy="50" r="3.4"/>
+                  <path d="M146 50 V24"/>
+                  <path class="fill" d="M146 24 L158 29.5 L146 35 Z"/>
+                </svg>
+              </div>
+              <h3 class="area-title">Exploration for Reinforcement Learning</h3>
+              <ul class="area-papers">
+                <li><a href="#paper-cqm">CQM</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">NeurIPS &rsquo;23</span></li>
+                <li><a href="#paper-dnc">Diversify &amp; Conquer</a><span class="area-venue">NeurIPS &rsquo;23</span></li>
+                <li><a href="#paper-outpace">OUTPACE</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">ICLR &rsquo;23</span></li>
+                <li><a href="#paper-dhrl">DHRL</a><span class="star-icon" aria-hidden="true">★</span><span class="area-venue">NeurIPS &rsquo;22</span></li>
+              </ul>
+            </li>
+          </ul>
+        </details>
+
+        <h3 class="research-subhead publications-label">Publications</h3>
 
         <div class="research-item" id="paper-flybycode">
           <span class="trace-year">2026</span>
@@ -323,7 +381,6 @@
           <div class="research-content">
             <a href="https://fly-by-code.github.io/">
               <span class="papertitle">Fly-by-Code: Embodied Coding Agents for Aerial Manipulation with Active Visual and Physical Feedback</span>
-              <span class="star-icon" aria-hidden="true">★</span>
             </a>
             <br>
             Jaewoo Lee*, Jeongyeon Seo*, Sihyun Cho*, Gyeongrak Choe, Yutong Wang, Bavin Saravanan, Jia-Bin Huang, Furong Huang, Sebastian Scherer, Guanya Shi, H. Jin Kim, <strong>Seungjae Lee</strong>&dagger;, Dongjae Lee&dagger; (*equal contribution, &dagger;project leads)
@@ -348,7 +405,6 @@
           <div class="research-content">
             <a href="https://dex-one2many.github.io/">
               <span class="papertitle">Dex-One2Many: Learning Dexterous Manipulation from a Single Human Demonstration</span>
-              <span class="star-icon" aria-hidden="true">★</span>
             </a>
             <br>
             Jusuk Lee*, Sungha Kim*, Yeonsoo Park*, Jonguk Cheon, Yoonkyo Jung, Yongjun You, H. Jin Kim, Jia-Bin Huang, Furong Huang, Youngseok Jang&dagger;, <strong>Seungjae Lee</strong>&dagger; (*equal contribution, &dagger;equal advising)
@@ -462,7 +518,6 @@
           <div class="research-content">
             <a href="https://mu0-wm.github.io/">
               <span class="papertitle">&mu;<sub>0</sub>: A Scalable 3D Interaction-Trace World Model</span>
-              <span class="star-icon" aria-hidden="true">★</span>
             </a>
             <br>
             <strong>Seungjae Lee</strong>*, Yoonkyo Jung*, Jusuk Lee, Jonghun Shin, Amir Hossein Shahidzadeh, Yao-Chih Lee, H. Jin Kim, Jia-Bin Huang&dagger;, Furong Huang&dagger; (*equal contribution, &dagger;equal advising)
@@ -544,7 +599,6 @@
           <div class="research-content">
             <a href="https://tracegen.github.io/">
               <span class="papertitle">TraceGen: World Modeling in 3D Trace-Space Enables Learning from Cross-Embodiment Videos</span>
-              <span class="star-icon" aria-hidden="true">★</span>
             </a>
             <br>
             <strong>Seungjae Lee</strong>*, Yoonkyo Jung*, Inkook Chun*, Yao-Chih Lee, Zikui Cai, Hongjia Huang, Aayush Talreja, Tan Dat Dao, Yongyuan Liang, Jia-Bin Huang, Furong Huang (*equal contribution)
@@ -655,7 +709,6 @@
             <div class="research-content">
               <a href="https://ive-robot.github.io/">
                 <span class="papertitle">Imagine, Verify, Execute: Memory-guided Agentic Exploration with Vision-Language Models</span>
-                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               <strong>Seungjae Lee*</strong>, Daniel Ekpo*, Haowen Liu, Furong Huang†, Abhinav Shrivastava†, Jia-Bin Huang† (*equal contribution, †equal advising)
@@ -671,7 +724,7 @@
           </div>
 
         <div class="research-list">
-          <div class="research-item">
+          <div class="research-item" id="paper-webai">
             <div class="research-image">
               <div class="paper-media">
                 <p class="venue">
@@ -748,7 +801,6 @@
             <div class="research-content">
               <a href="https://sjlee.cc/vq-bet">
                 <span class="papertitle">Behavior Generation with Latent Actions</span>
-                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               <strong>Seungjae Lee</strong>, Yibin Wang, Haritheja Etukuru, H. Jin Kim, Nur Muhammad Mahi Shafiullah, Lerrel Pinto
@@ -783,7 +835,6 @@
             <div class="research-content">
               <a href="https://arxiv.org/abs/2310.17330">
                 <span class="papertitle">CQM: Curriculum Reinforcement Learning with a Quantized World Model</span>
-                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               <strong>Seungjae Lee</strong>, Daesol Cho, Jonghae Park, H Jin Kim
@@ -837,7 +888,6 @@
             <div class="research-content">
               <a href="https://arxiv.org/abs/2301.11520">
                 <span class="papertitle">SNeRL: Semantic-aware Neural Radiance Fields for Reinforcement Learning</span>
-                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               Dongseok Shim*, <strong>Seungjae Lee*</strong>, H Jin Kim (*equal contribution)
@@ -866,7 +916,6 @@
             <div class="research-content">
               <a href="https://arxiv.org/abs/2301.11741">
                 <span class="papertitle">Outcome-directed Reinforcement Learning by Uncertainty & Temporal Distance-Aware Curriculum Goal Generation</span>
-                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               Daesol Cho*, <strong>Seungjae Lee*</strong>, H Jin Kim (*equal contribution)
@@ -930,7 +979,6 @@
             <div class="research-content">
               <a href="https://arxiv.org/abs/2210.05150">
                 <span class="papertitle">DHRL: A Graph-Based Approach for Long-Horizon and Sparse Hierarchical Reinforcement Learning</span>
-                <span class="star-icon" aria-hidden="true">★</span>
               </a>
               <br>
               <strong>Seungjae Lee</strong>, Jigang Kim, Inkyu Jang, H. Jin Kim
