@@ -464,13 +464,6 @@ a:hover .papertitle {
     color: var(--ink);
 }
 
-.star-icon {
-    margin-left: 0.3rem;
-    color: var(--heat);
-    font-size: 0.8em;
-    vertical-align: 0.15em;
-}
-
 .research-content > a:not(:has(.papertitle)) {
     font-family: "Archivo", system-ui, sans-serif;
     font-size: 0.82rem;
@@ -507,18 +500,6 @@ a:hover .papertitle {
 /* A one-line intro reads as part of the heading, not a new block. */
 .section-head + p {
     margin-top: -0.9rem;
-}
-
-.star-legend {
-    margin: 0;
-    font-family: "Archivo", system-ui, sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--ink-2);
-}
-
-.star-legend .star-icon {
-    margin: 0 0.2rem 0 0;
 }
 
 /* ── Research areas ─────────────────────────────────────────────────────
@@ -815,10 +796,6 @@ a:hover .papertitle {
 .area-papers a:hover,
 .area-papers a:focus-visible {
     color: var(--flow);
-}
-
-.area-papers .star-icon {
-    margin-left: 0.22rem;
 }
 
 /* Venue on its own line in the columns, so a long name and a short one
